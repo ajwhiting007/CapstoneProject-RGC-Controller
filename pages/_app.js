@@ -24,14 +24,14 @@ function MyApp({ Component, pageProps }) {
   }
   return (
     <div className="App">
-      <Button direction="up" />
-      <Button direction="down" />
+      <Button direction="up" onClick={() => triggerEvent(direction)}/>
+      <Button direction="down" onClick={() => triggerEvent(direction)}/>
     </div>
   )
 }
 
 function Button(props) {
-    return <div><button onClick={() => triggerEvent(props.direction)}></button></div>;
+    return <div><button>{props.direction}</button></div>;
 }
 
 export default MyApp
