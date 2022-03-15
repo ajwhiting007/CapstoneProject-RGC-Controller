@@ -31,13 +31,7 @@ function MyApp({ Component, pageProps }) {
 }
 
 function Button(props) {
-  if (props.direction == "up")
-  {
-    return <div><button onClick={() => triggerEvent(props.direction)}>{props.direction}</button></div>;
-  }
-  else if(props.direction == "down"){
-    return <div><button onClick={() => triggerEvent(props.direction)}>{props.direction}</button></div>;
-  }
+    return <div><button onClick={() => triggerEvent(props.direction)}></button></div>;
 }
 
 export default MyApp
