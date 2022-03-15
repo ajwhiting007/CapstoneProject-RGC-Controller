@@ -24,8 +24,8 @@ function MyApp({ Component, pageProps }) {
   }
   return (
     <div className="App">
-      <Button direction="up" onClick={() => triggerEvent(direction)}/>
-      <Button direction="down" onClick={() => triggerEvent(direction)}/>
+      <Button direction="up" onClick={() => triggerEvent('up')}/>
+      <Button direction="down" onClick={() => triggerEvent('down')}/>
     </div>
   )
 }
