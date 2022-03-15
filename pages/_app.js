@@ -31,12 +31,12 @@ function MyApp({ Component, pageProps }) {
 }
 
 function Button(props) {
-  if (props.direction == 'up')
+  if (props.direction == "up")
   {
-    return <div><button onClick={() => triggerEvent(props.direction)}>Up</button></div>;
+    return <div><button onClick={() => triggerEvent(props.direction)}>{props.direction}</button></div>;
   }
-  else{
-    return <div><button onClick={() => triggerEvent(props.direction)}>Down</button></div>;
+  else if(props.direction == "down"){
+    return <div><button onClick={() => triggerEvent(props.direction)}>{props.direction}</button></div>;
   }
 }
 
