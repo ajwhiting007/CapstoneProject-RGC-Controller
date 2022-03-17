@@ -22,6 +22,7 @@ function Home() {
       alert('Please enter a valid game code.')
       return
     } else {
+      console.log('In the connect: ')
       pusher = new Pusher(config.key, {
         cluster: 'us2',
         authEndpoint: 'api/pusher/auth',
