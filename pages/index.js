@@ -27,7 +27,9 @@ function Home() {
         cluster: 'us2',
         authEndpoint: 'api/pusher/auth',
       })
+      console.log('Trying to subscribe')
       channel = pusher.subscribe('private-pong' + gameCode)
+      console.log('Channel ', channel)
       channel.bind('pusher:subscription_succeeded', () => {
         let triggered = channel.trigger('client-controllerconnect', 'Connected')
         redirect()
