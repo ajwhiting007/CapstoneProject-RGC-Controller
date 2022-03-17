@@ -39,21 +39,23 @@ function Home() {
 
   /**************DISPLAY***********/
   return (
-    <div className="flex min-h-screen flex-col items-center justify-center py-2">
-      <input
-        type="text"
-        placeholder="Enter game code"
-        onChange={(e) => {
-          setGameCode(e.currentTarget.value)
-        }}
-        className="rounded-md border-2 border-gray-500 py-2"
-      />
-      <button
-        className="ml-3 rounded-md bg-blue-500 py-2 px-2 text-white"
-        onClick={() => connect()}
-      >
-        Connect
-      </button>
+    <div className="background-white flex min-h-screen flex-row items-center justify-center bg-blue-500">
+      <div className="rounded-md bg-white py-6 px-6">
+        <input
+          type="text"
+          placeholder="  Enter game code"
+          onChange={(e) => {
+            setGameCode(e.currentTarget.value)
+          }}
+          className="rounded-md border-2 border-gray-500 py-2 font-bold"
+        />
+        <button
+          className="ml-3 rounded-md bg-blue-500 py-2 px-2 font-bold text-white"
+          onClick={() => connect()}
+        >
+          Connect
+        </button>
+      </div>
     </div>
   )
 }
