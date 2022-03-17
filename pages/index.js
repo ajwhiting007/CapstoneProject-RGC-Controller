@@ -43,11 +43,11 @@ function Home() {
       <div className="rounded-md bg-white py-6 px-6">
         <input
           type="text"
-          placeholder="  Enter game code"
+          placeholder="Enter game code"
           onChange={(e) => {
             setGameCode(e.currentTarget.value)
           }}
-          className="rounded-md border-2 border-gray-500 py-2 font-bold"
+          className="rounded-md border-2 border-gray-500 py-2 text-center font-bold uppercase"
         />
         <button
           className="ml-3 rounded-md bg-blue-500 py-2 px-2 font-bold text-white"
