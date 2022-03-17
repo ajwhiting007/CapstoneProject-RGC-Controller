@@ -23,6 +23,9 @@ export default function Controller() {
       authEndpoint: 'api/pusher/auth',
     })
     channel = pusher.subscribe('private-pong' + gameCode)
+    channel.bind('pusher:subscription_succeeded', () => {
+      let triggered = channel.trigger('client-controllerconnect', 'Connected')
+    })
   }
 
   /************Functions*************/
