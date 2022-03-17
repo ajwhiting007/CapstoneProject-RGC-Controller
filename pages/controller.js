@@ -25,6 +25,7 @@ export default function Controller() {
     channel = pusher.subscribe('private-pong' + gameCode)
   }
 
+  /************Functions*************/
   const triggerEvent = (move) => {
     channel.trigger('client-controllermovement', move)
   }
