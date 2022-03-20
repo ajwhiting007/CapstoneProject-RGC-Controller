@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react'
 import { useRouter } from 'next/router'
 import Pusher from 'pusher-js'
 import config from '../config.json'
-import '../styles/controller.css'
 
 export default function Controller() {
   /**********Router Variables************/
@@ -36,12 +35,12 @@ export default function Controller() {
 
   /**********Display************/
   return (
-    <div id="container" className="flex min-h-screen flex-col items-center justify-center py-2">
+    <div className="container" >
       <div>
-        <button id="item" onClick={() => triggerEvent('up')}>Send Up</button>
+        <button className="item" onClick={() => triggerEvent('up')}>Send Up</button>
       </div>
       <div>
-        <button id="item" onClick={() => triggerEvent('down')}>Send Down</button>
+        <button className="item" onClick={() => triggerEvent('down')} style={{ transform: [{ rotate: '180deg'}] }}>Send Down</button>
       </div>
     </div>
   )
