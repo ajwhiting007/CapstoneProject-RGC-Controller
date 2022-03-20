@@ -8,7 +8,7 @@
     flex-wrap: wrap;
     justify-content: flex-start;
     align-items: stretch;
-    gap: 30px
+    gap: 30px;
 }
 
 .item {
