@@ -1,79 +1,13 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
-
-<svg
-   width="33.797573mm"
-   height="34.278694mm"
-   viewBox="0 0 33.797573 34.278694"
-   version="1.1"
-   id="svg5"
-   sodipodi:docname="arrow1.svg"
-   inkscape:version="1.1.2 (b8e25be833, 2022-02-05)"
-   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-   xmlns="http://www.w3.org/2000/svg"
-   xmlns:svg="http://www.w3.org/2000/svg">
-  <sodipodi:namedview
-     id="namedview7"
-     pagecolor="#ffffff"
-     bordercolor="#666666"
-     borderopacity="1.0"
-     inkscape:pageshadow="2"
-     inkscape:pageopacity="0.0"
-     inkscape:pagecheckerboard="0"
-     inkscape:document-units="mm"
-     showgrid="false"
-     inkscape:zoom="2.1997092"
-     inkscape:cx="75.691823"
-     inkscape:cy="45.233252"
-     inkscape:window-width="1284"
-     inkscape:window-height="1082"
-     inkscape:window-x="983"
-     inkscape:window-y="144"
-     inkscape:window-maximized="0"
-     inkscape:current-layer="layer1"
-     fit-margin-top="0"
-     fit-margin-left="0"
-     fit-margin-right="0"
-     fit-margin-bottom="0"
-     borderlayer="true">
-    <inkscape:grid
-       type="xygrid"
-       id="grid3156"
-       originx="-84.137295"
-       originy="-120.70274" />
-  </sodipodi:namedview>
-  <defs
-     id="defs2" />
-  <g
-     inkscape:label="Layer 1"
-     inkscape:groupmode="layer"
-     id="layer1"
-     transform="translate(-84.137294,-120.70274)">
-    <path
-       id="path1437"
-       style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.0482705"
-       d="m 117.55112,138.12372 a 16.509883,16.509883 0 0 1 -16.50988,16.50988 16.509883,16.509883 0 0 1 -16.509887,-16.50988 16.509883,16.509883 0 0 1 16.509887,-16.50989 16.509883,16.509883 0 0 1 16.50988,16.50989 z"
-       inkscape:original-d="m 117.55112,138.12372 a 16.509883,16.509883 0 0 1 -16.50988,16.50988 16.509883,16.509883 0 0 1 -16.509887,-16.50988 16.509883,16.509883 0 0 1 16.509887,-16.50989 16.509883,16.509883 0 0 1 16.50988,16.50989 z" />
-    <path
-       id="rect2625"
-       style="fill:#97b4d4;stroke:#ffffff;stroke-width:0.6;stroke-miterlimit:4;stroke-dasharray:none"
-       d="m 97.664457,126.0047 h 6.181873 v 6.18187 h -6.181873 z"
-       inkscape:original-d="m 97.664457,126.0047 h 6.181873 v 6.18187 h -6.181873 z" />
-    <path
-       id="rect2625-2"
-       style="fill:#97b4d4;stroke:#ffffff;stroke-width:0.6;stroke-miterlimit:4;stroke-dasharray:none"
-       d="m 97.664457,132.18657 h 6.181873 v 6.18187 h -6.181873 z"
-       inkscape:original-d="m 97.664457,132.18657 h 6.181873 v 6.18187 h -6.181873 z" />
-    <path
-       id="rect2625-1"
-       style="fill:#97b4d4;stroke:#ffffff;stroke-width:0.6;stroke-miterlimit:4;stroke-dasharray:none"
-       d="m 97.664457,138.36844 h 6.181873 v 6.18188 h -6.181873 z"
-       inkscape:original-d="m 97.664457,138.36844 h 6.181873 v 6.18188 h -6.181873 z" />
-    <path
-       style="fill:#97b4d4;fill-opacity:1;stroke:#ffffff;stroke-width:0.6;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       d="m 103.84633,144.64362 h 4.82706 c -2.43061,2.26332 -5.11078,4.23059 -7.72329,6.27517 -2.767355,-1.89387 -5.207754,-4.07407 -7.7233,-6.27517 h 4.344354 z"
-       id="path3191"
-       sodipodi:nodetypes="cccccc" />
+<svg width="33.798mm" height="34.279mm" version="1.1" viewBox="0 0 33.798 34.279" xmlns="http://www.w3.org/2000/svg">
+ <g transform="translate(-84.137 -120.7)">
+  <path d="m117.55 138.12a16.51 16.51 0 0 1-16.51 16.51 16.51 16.51 0 0 1-16.51-16.51 16.51 16.51 0 0 1 16.51-16.51 16.51 16.51 0 0 1 16.51 16.51z" fill-rule="evenodd" stroke="#000" stroke-width=".04827"/>
+  <g fill="#97b4d4" stroke="#fff" stroke-width=".6">
+   <path d="m97.664 126h6.1819v6.1819h-6.1819z"/>
+   <path d="m97.664 132.19h6.1819v6.1819h-6.1819z"/>
+   <path d="m97.664 138.37h6.1819v6.1819h-6.1819z"/>
+   <path d="m103.85 144.64h4.8271c-2.4306 2.2633-5.1108 4.2306-7.7233 6.2752-2.7674-1.8939-5.2078-4.0741-7.7233-6.2752h4.3444z"/>
   </g>
+ </g>
 </svg>
