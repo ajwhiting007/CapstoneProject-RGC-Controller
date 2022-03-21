@@ -16,7 +16,7 @@ function Home() {
     router.push({ pathname: '/controller', query: { gameCode: gameCode } })
   }
 
-  const connect = () => {
+  async function connect() {
     if (gameCode.length != 5) {
       console.log('Gamecode: ', gameCode)
       alert('Please enter a valid game code.')
@@ -32,7 +32,13 @@ function Home() {
       console.log('Channel ', channel)
       channel.bind('pusher:subscription_succeeded', () => {
         let triggered = channel.trigger('client-controllerconnect', 'Connected')
-        redirect()
+        channel.bind('client-controllerconnectresponse', (message) => {
+          if (message == 'Recieved') {
+            redirect()
+          } else {
+            alert('An error has occurred. Please retry connection.')
+          }
+        })
       })
     }
   }
