@@ -49,7 +49,7 @@ export default function Controller() {
 function SVGArrow(props) {
   if(props.direction == "up")
   {
-    return <svg className='item' width="90%" height="90%" version="1.1" viewBox="0 0 33.798 34.279" xmlns="http://www.w3.org/2000/svg">
+    return <svg className='upButton' width="90%" height="90%" version="1.1" viewBox="0 0 33.798 34.279" xmlns="http://www.w3.org/2000/svg">
      <g transform="translate(-84.137 -120.7)">
       <path d="m117.55 138.12a16.51 16.51 0 0 1-16.51 16.51 16.51 16.51 0 0 1-16.51-16.51 16.51 16.51 0 0 1 16.51-16.51 16.51 16.51 0 0 1 16.51 16.51z" fill-rule="evenodd" stroke="#000" stroke-width=".04827"/>
       <g fill="#97b4d4" stroke="#fff" stroke-width=".6">
@@ -63,7 +63,7 @@ function SVGArrow(props) {
   }
   if(props.direction == "down")
   {
-    return <svg className='item2' width="90%" height="90%" version="1.1" viewBox="0 0 33.798 34.279" xmlns="http://www.w3.org/2000/svg">
+    return <svg className='downButton' width="90%" height="90%" version="1.1" viewBox="0 0 33.798 34.279" xmlns="http://www.w3.org/2000/svg">
      <g transform="translate(-84.137 -120.7)">
       <path d="m117.55 138.12a16.51 16.51 0 0 1-16.51 16.51 16.51 16.51 0 0 1-16.51-16.51 16.51 16.51 0 0 1 16.51-16.51 16.51 16.51 0 0 1 16.51 16.51z" fill-rule="evenodd" stroke="#000" stroke-width=".04827"/>
       <g fill="#97b4d4" stroke="#fff" stroke-width=".6">
