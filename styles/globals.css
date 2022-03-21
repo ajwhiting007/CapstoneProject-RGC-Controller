@@ -23,15 +23,6 @@
     }
 }
 
-.container {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    align-items: stretch;
-    gap: 30px;
-}
-
 .spacing {
     margin-left: 7.5%;
     margin-bottom: 7.5%;
