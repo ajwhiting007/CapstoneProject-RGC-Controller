@@ -36,10 +36,10 @@ export default function Controller() {
   /**********Display************/
   return (
     <div className="container" >
-      <div>
+      <div className="spacing">
         <button onClick={() => triggerEvent('up')}><SVGArrow direction="up" />Send Up</button>
       </div>
-      <div>
+      <div className="spacing"> 
         <button onClick={() => triggerEvent('down')}><SVGArrow direction="down" />Send Down</button>
       </div>
     </div>
