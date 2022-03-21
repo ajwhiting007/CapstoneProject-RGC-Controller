@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-@media screen and (orientation: landscape) {
+@media screen and (orientation: portrait) {
     .container {
         display: flex;
         flex-direction: column;
@@ -13,7 +13,7 @@
     }
 }
 
-@media screen and (orientation: portrait) {
+@media screen and (orientation: landscape) {
     .container {
         display: flex;
         flex-direction: row;
