@@ -2,13 +2,26 @@
 @tailwind components;
 @tailwind utilities;
 
-.container {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    align-items: stretch;
-    gap: 30px;
+@media screen and (orientation: portrait) {
+    .container {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        align-items: stretch;
+        gap: 30px;
+    }
+}
+
+@media screen and (orientation: landscape) {
+    .container {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        align-items: stretch;
+        gap: 30px;
+    }
 }
 
 .spacing {
