@@ -13,7 +13,7 @@
     }
 }
 
-@media only screen and (max-height: 480px) and (orientation: landscape) {
+@media screen and (orientation: landscape) {
     .container {
         display: flex;
         flex-direction: row;
