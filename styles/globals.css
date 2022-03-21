@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-@media screen and (orientation: portrait) {
+@media only screen and (max-width: 480px) and (orientation: portrait) {
     .container {
         display: flex;
         flex-direction: column;
@@ -13,7 +13,7 @@
     }
 }
 
-@media screen and (orientation: landscape) {
+@media only screen and (max-height: 480px) and (orientation: landscape) {
     .container {
         display: flex;
         flex-direction: row;
@@ -22,6 +22,15 @@
         align-items: stretch;
         gap: 30px;
     }
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: stretch;
+    gap: 30px;
 }
 
 .spacing {
