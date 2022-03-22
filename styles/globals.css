@@ -9,7 +9,7 @@
         flex-wrap: wrap;
         justify-content: flex-start;
         align-items: stretch;
-        gap: 30px;
+        gap: 5px;
     }
 }
 
@@ -17,26 +17,64 @@
     .container {
         display: flex;
         flex-direction: row;
-        justify-content: flex-start;
-        align-items: stretch;
-        gap: 30px;
+        justify-content: space-between;
+        align-items: center;
+        align-content: stretch;
+        gap: 10px;
     }
 }
 
-.spacing {
-    margin-left: 7.5%;
-    margin-right: 7.5%;
-    margin-top: 7.5%;
-    margin-bottom: 7.5%;
+@media screen and (orientation: portrait) {
+    .spacing {
+        margin-left: 7.5%;
+        margin-right: 7.5%;
+        margin-top: 2.5%;
+        margin-bottom: 2.5%;
+    }
+}
+
+@media screen and (orientation: landscape) {
+    .spacing {
+        margin-left: 2.5%;
+        margin-right: 2.5%;
+        margin-top: 7.5%;
+        margin-bottom: 7.5%;
+    }
+}
+
+@media screen and (orientation: portrait) {
+    .playSpacing {
+        margin-left: 7.5%;
+        margin-right: 7.5%;
+        margin-top: 2.5%;
+        margin-bottom: 2.5%;
+    }
+}
+
+@media screen and (orientation: landscape) {
+    .playSpacing {
+        margin-left: 2.5%;
+        margin-right: 2.5%;
+        margin-top: 7.5%;
+        margin-bottom: 7.5%;
+    }
 }
 
 .upButton {
     align-items: center;
     align-self:center;
     transform: rotateX(180deg);
+    flex: 2;
 }
 
 .downButton {
     align-items: center;
     align-self:center;
+    flex: 2;
+}
+
+.playButton {
+    align-items: center;
+    align-self:center;
+    flex: 1.5;
 }
