@@ -29,6 +29,7 @@
     margin-right: 5%;
     margin-top: 2.5%;
     margin-bottom: 2.5%;
+    flex-grow: 2;
 }
 
 .playSpacing {
@@ -36,6 +37,7 @@
     margin-right: 5%;
     margin-top: 2.5%;
     margin-bottom: 2.5%;
+    flex-grow: 1.5;
 }
 
 .upButton {
