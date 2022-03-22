@@ -29,7 +29,6 @@
     margin-right: 5%;
     margin-top: 2.5%;
     margin-bottom: 2.5%;
-    flex-grow: 2;
 }
 
 .playSpacing {
@@ -37,21 +36,23 @@
     margin-right: 5%;
     margin-top: 2.5%;
     margin-bottom: 2.5%;
-    flex-grow: 1.5;
 }
 
 .upButton {
     align-items: center;
     align-self:center;
     transform: rotateX(180deg);
+    flex-grow: 2;
 }
 
 .downButton {
     align-items: center;
     align-self:center;
+    flex-grow: 2;
 }
 
 .playButton {
     align-items: center;
     align-self:center;
+    flex-grow: 1.5;
 }
