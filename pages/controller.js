@@ -6,7 +6,7 @@ import config from '../config.json'
 export default function Controller() {
   /**********Router Variables************/
   const router = useRouter()
-  const gameCode = router.query.gameCode
+  let gameCode
   console.log('gameCode = ', gameCode)
 
   /**********Pusher Variables************/
@@ -25,6 +25,7 @@ export default function Controller() {
       cluster: 'us2',
       authEndpoint: 'api/pusher/auth',
     })
+    gameCode = router.query.gameCode
     channel = pusher.subscribe('private-pong' + gameCode)
     setChannelTest(channel)
     channel.bind('pusher:subscription_succeeded', () => {
