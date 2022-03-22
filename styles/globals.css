@@ -17,22 +17,22 @@
     .container {
         display: flex;
         flex-direction: row;
-        justify-content: flex-start;
-        align-items: stretch;
-        gap: 30px;
+        justify-content: space-between;
+        align-items: center;
+        gap: 10px;
     }
 }
 
 .spacing {
     margin-left: 7.5%;
-    margin-right: 7.5%;
+    margin-right: 5%;
     margin-top: 7.5%;
     margin-bottom: 7.5%;
 }
 
 .playSpacing {
     margin-left: 7.5%;
-    margin-right: 7.5%;
+    margin-right: 5%;
     margin-top: 2.5%;
     margin-bottom: 2.5%;
 }
