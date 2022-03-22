@@ -51,7 +51,7 @@ function Home() {
           type="text"
           placeholder="Enter game code"
           onChange={(e) => {
-            setGameCode(e.currentTarget.value)
+            setGameCode(e.currentTarget.value.toUpperCase())
           }}
           className="rounded-md border-2 border-gray-500 py-2 text-center font-bold uppercase"
         />
