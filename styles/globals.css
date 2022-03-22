@@ -65,13 +65,14 @@
 }
 
 .upButton {
-    width: 110%;
+    width: 120%;
     align-items: center;
     align-self:center;
     transform: rotateX(180deg);
 }
 
 .downButton {
+    width: 120%;
     align-items: center;
     align-self:center;
 }
