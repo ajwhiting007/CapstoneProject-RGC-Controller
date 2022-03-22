@@ -39,7 +39,7 @@ export default function Controller() {
       <div className="spacing">
         <button onClick={() => triggerEvent('up')}><SVGArrow direction="up" />Send Up</button>
       </div>
-      <div>
+      <div className="spacing">
         <button onClick={() => triggerEvent('0')}><SVGPlay /></button>
       </div>
       <div className="spacing"> 
