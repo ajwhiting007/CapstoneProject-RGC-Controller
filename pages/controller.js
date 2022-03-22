@@ -7,6 +7,7 @@ export default function Controller() {
   /**********Router Variables************/
   const router = useRouter()
   const gameCode = router.query.gameCode
+  console.log('gameCode = ', gameCode)
 
   /**********Pusher Variables************/
   let pusher
