@@ -15,8 +15,7 @@
 
 @media screen and (orientation: landscape) {
     .container {
-        margin-right: -20%;
-        margin-bottom: -20%;
+        margin: auto;
         display: flex;
         flex-direction: row;
         justify-content: space-evenly;
