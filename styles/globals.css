@@ -36,7 +36,7 @@
 @media screen and (orientation: landscape) {
     .spacing {
         margin-left: 5%;
-        margin-right: 2.5%;
+        margin-right: 6%;
         margin-top: 7.5%;
         margin-bottom: 7.5%;
         width: 100%;
@@ -55,16 +55,16 @@
 
 @media screen and (orientation: landscape) {
     .playSpacing {
-        margin-left: 2.5%;
+        margin-left: 3%;
         margin-right: 2.5%;
         margin-top: 7.5%;
         margin-bottom: 7.5%;
-        width: 70%;
-        height: 100%;
+        width: 80%;
     }
 }
 
 .upButton {
+    width: 110%;
     align-items: center;
     align-self:center;
     transform: rotateX(180deg);
