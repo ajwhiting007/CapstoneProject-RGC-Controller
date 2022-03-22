@@ -16,7 +16,6 @@
 @media screen and (orientation: landscape) {
     .container {
         margin: auto;
-        margin-right: 12%;
         display: flex;
         flex-direction: row;
         justify-content: space-evenly;
@@ -56,10 +55,8 @@
 
 @media screen and (orientation: landscape) {
     .playSpacing {
-        margin-left: 9%;
-        margin-right: 2.5%;
-        margin-top: 7.5%;
-        margin-bottom: 7.5%;
+        margin: auto;
+        margin-left: 2.5%;
         width: 80%;
     }
 }
