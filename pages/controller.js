@@ -39,7 +39,7 @@ export default function Controller() {
       <div className="spacing">
         <button onClick={() => triggerEvent('up')}><SVGArrow direction="up" />Send Up</button>
       </div>
-      <div className="spacing">
+      <div className="playSpacing">
         <button onClick={() => triggerEvent('0')}><SVGPlay /></button>
       </div>
       <div className="spacing"> 
@@ -82,7 +82,7 @@ function SVGArrow(props) {
 
 function SVGPlay(props)
 {
-  return <svg width="100%" height="100%" version="1.1" viewBox="0 0 29.938 8.7603" xmlns="http://www.w3.org/2000/svg">
+  return <svg className='playButton' width="100%" height="100%" version="1.1" viewBox="0 0 29.938 8.7603" xmlns="http://www.w3.org/2000/svg">
   <g transform="translate(-20.072 -82.585)" stroke-width=".26458">
    <path d="m24.07 82.585h21.943c2.2146 0 3.9974 1.7829 3.9974 3.9974v0.76546c0 2.2146-1.7828 3.9974-3.9974 3.9974h-21.943c-2.2146 0-3.9974-1.7829-3.9974-3.9974v-0.76546c0-2.2146 1.7829-3.9974 3.9974-3.9974z" fill="#00a0ff" fill-rule="evenodd"/>
    <g aria-label="Play">

@@ -30,6 +30,13 @@
     margin-bottom: 7.5%;
 }
 
+.playSpacing {
+    margin-left: 7.5%;
+    margin-right: 7.5%;
+    margin-top: 2.5%;
+    margin-bottom: 2.5%;
+}
+
 .upButton {
     align-items: center;
     align-self:center;
@@ -37,6 +44,11 @@
 }
 
 .downButton {
+    align-items: center;
+    align-self:center;
+}
+
+.playButton {
     align-items: center;
     align-self:center;
 }
