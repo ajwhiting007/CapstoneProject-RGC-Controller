@@ -9,7 +9,7 @@
         flex-wrap: wrap;
         justify-content: flex-start;
         align-items: stretch;
-        gap: 15px;
+        gap: 5px;
     }
 }
 
@@ -42,17 +42,17 @@
     align-items: center;
     align-self:center;
     transform: rotateX(180deg);
-    flex-grow: 2;
+    flex: 2;
 }
 
 .downButton {
     align-items: center;
     align-self:center;
-    flex-grow: 2;
+    flex: 2;
 }
 
 .playButton {
     align-items: center;
     align-self:center;
-    flex-grow: 1.5;
+    flex: 1.5;
 }
