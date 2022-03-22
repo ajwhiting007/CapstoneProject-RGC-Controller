@@ -24,18 +24,40 @@
     }
 }
 
-.spacing {
-    margin-left: 7.5%;
-    margin-right: 5%;
-    margin-top: 2.5%;
-    margin-bottom: 2.5%;
+@media screen and (orientation: portrait) {
+    .spacing {
+        margin-left: 7.5%;
+        margin-right: 7.5%;
+        margin-top: 2.5%;
+        margin-bottom: 2.5%;
+    }
 }
 
-.playSpacing {
-    margin-left: 7.5%;
-    margin-right: 5%;
-    margin-top: 2.5%;
-    margin-bottom: 2.5%;
+@media screen and (orientation: landscape) {
+    .spacing {
+        margin-left: 2.5%;
+        margin-right: 2.5%;
+        margin-top: 7.5%;
+        margin-bottom: 7.5%;
+    }
+}
+
+@media screen and (orientation: portrait) {
+    .playSpacing {
+        margin-left: 7.5%;
+        margin-right: 7.5%;
+        margin-top: 2.5%;
+        margin-bottom: 2.5%;
+    }
+}
+
+@media screen and (orientation: landscape) {
+    .playSpacing {
+        margin-left: 2.5%;
+        margin-right: 2.5%;
+        margin-top: 7.5%;
+        margin-bottom: 7.5%;
+    }
 }
 
 .upButton {
