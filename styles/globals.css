@@ -4,6 +4,7 @@
 
 @media screen and (orientation: portrait) {
     .container {
+        margin-left: 2.5%;
         display: flex;
         flex-direction: column;
         flex-wrap: wrap;
