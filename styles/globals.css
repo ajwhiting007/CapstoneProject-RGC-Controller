@@ -9,7 +9,7 @@
         flex-wrap: wrap;
         justify-content: flex-start;
         align-items: stretch;
-        gap: 30px;
+        gap: 15px;
     }
 }
 
@@ -19,6 +19,7 @@
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
+        align-content: stretch;
         gap: 10px;
     }
 }
@@ -26,8 +27,8 @@
 .spacing {
     margin-left: 7.5%;
     margin-right: 5%;
-    margin-top: 7.5%;
-    margin-bottom: 7.5%;
+    margin-top: 2.5%;
+    margin-bottom: 2.5%;
 }
 
 .playSpacing {
