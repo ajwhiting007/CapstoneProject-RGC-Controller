@@ -126,7 +126,7 @@ function SVGPlay(props) {
       //Pause Button
       <svg
         className="playButton"
-        width="100%"
+        width="80%"
         height="100%"
         version="1.1" 
         viewBox="0 0 29.938 8.7603" 
