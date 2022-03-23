@@ -25,7 +25,6 @@ export default function Controller() {
     })
 
     gameCode = router.query.gameCode
-    console.log('gamecode = ', gameCode)
     channel = pusher.subscribe('private-pong' + gameCode)
     setChannelTest(channel)
     channel.bind('pusher:subscription_succeeded', () => {
