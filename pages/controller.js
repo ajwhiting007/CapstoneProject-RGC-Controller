@@ -128,8 +128,6 @@ function SVGPlay(props) {
         className="playButton"
         width="100%"
         height="100%"
-        width="29.938mm" 
-        height="8.7603mm" 
         version="1.1" 
         viewBox="0 0 29.938 8.7603" 
         xmlns="http://www.w3.org/2000/svg">
