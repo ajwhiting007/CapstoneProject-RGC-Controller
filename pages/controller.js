@@ -39,7 +39,7 @@ export default function Controller() {
   /************Functions*************/
   const triggerEvent = (move) => {
     channelTest.trigger('client-controllermovement', move)
-    if(move == '0')
+    if(char(move) == '0')
     {
       playPauseSwitch = !playPauseSwitch;
     }
@@ -130,6 +130,7 @@ function SVGPlay(props) {
   if(props.switch == false)
   {
     return (
+      //Pause Button
       <svg
         className="playButton"
         width="100%"
@@ -156,6 +157,7 @@ function SVGPlay(props) {
   }
   else{
     return (
+      //Play Button
       <svg
         className="playButton"
         width="100%"
