@@ -42,7 +42,7 @@ export default function Controller() {
   /**********Display************/
   return (
     <div className="container">
-      <div className="spacing">
+      <div unselectable="on" className="spacing">
         <button onClick={() => triggerEvent('1')}>
           <SVGArrow direction="up" />
           Send Up
@@ -53,7 +53,7 @@ export default function Controller() {
           <SVGPlay />
         </button>
       </div>
-      <div className="spacing">
+      <div unselectable="on" className="spacing">
         <button onClick={() => triggerEvent('-1')}>
           <SVGArrow direction="down" />
           Send Down
