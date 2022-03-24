@@ -43,7 +43,7 @@ export default function Controller() {
   return (
     <div className="container">
       <div className="spacing">
-        <button user-select="none" onClick={() => triggerEvent('1')}>
+        <button className="unselectable" onClick={() => triggerEvent('1')}>
           <SVGArrow direction="up" />
           Send Up
         </button>
@@ -54,7 +54,7 @@ export default function Controller() {
         </button>
       </div>
       <div className="spacing">
-        <button user-select="none" onClick={() => triggerEvent('-1')}>
+        <button className="unselectable" onClick={() => triggerEvent('-1')}>
           <SVGArrow direction="down" />
           Send Down
         </button>
