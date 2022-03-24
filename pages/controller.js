@@ -43,7 +43,7 @@ export default function Controller() {
   /**********Display************/
   return (
     <div className="container">
-      <div className="spacing">
+      <div className="returnButton">
         <button onClick={() => triggerEvent('X')}>
           <SVGReturn />
         </button>
@@ -130,7 +130,7 @@ function SVGPlay(props) {
     return (
       //Pause Button
       <svg
-        className="playButton"
+        className="pauseButton"
         width="80%"
         height="100%"
         version="1.1" 
@@ -155,7 +155,12 @@ function SVGPlay(props) {
 function SVGReturn(props) {
   return (
     //Return Button
-    <svg width="100%" height="100%" version="1.1" viewBox="0 0 13.299 8.7437" xmlns="http://www.w3.org/2000/svg">
+    <svg 
+    width="50%"
+    height="80%"
+    version="1.1"
+    viewBox="0 0 13.299 8.7437"
+    xmlns="http://www.w3.org/2000/svg">
  <g transform="translate(-29.099 -82.642)" stroke-width=".26458">
   <g aria-label="Play"></g>
   <rect x="29.099" y="82.642" width="13.299" height="8.7437" rx="3.9974" ry="4.2302" fill="#1c9dae" stroke-width=".072012"/>

@@ -62,23 +62,31 @@
 }
 
 .upButton {
+    order: 1;
     align-items: center;
     align-self:center;
     transform: rotateX(180deg);
 }
 
 .downButton {
+    order: 3;
     align-items: center;
     align-self:center;
 }
 
-.playButton {
+.pauseButton {
+    order: 2;
     align-items: center;
     align-self:center;
 }
 
 @media screen and (orientation: portrait) {
     .returnButton {
+        order: 1;
+        margin-left: 7.5%;
+        margin-right: 7.5%;
+        margin-top: 2.5%;
+        margin-bottom: 2.5%;
         margin: auto;
         width: 80%;
     }
@@ -86,8 +94,13 @@
 
 @media screen and (orientation: landscape) {
     .returnButton {
+        order: 3;
+        align-self: flex-end;
+        margin-left: 5%;
+        margin-right: 2.5%;
+        margin-top: 2.5%;
+        margin-bottom: 2.5%;
         margin: auto;
-        width: 80%;
     }
 }
 
