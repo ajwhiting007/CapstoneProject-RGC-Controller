@@ -200,7 +200,6 @@ function SVGReturnBottom(props) {
     return (
       //Return Button
       <svg 
-      display="none"
       width="50%"
       height="80%"
       version="1.1"
