@@ -78,7 +78,7 @@ function SVGArrow(props) {
   if (props.direction == 'up') {
     return (
       <svg
-        id="upButton"
+        className="upButton"
         width="90%"
         height="90%"
         version="1.1"
@@ -105,7 +105,7 @@ function SVGArrow(props) {
   if (props.direction == 'down') {
     return (
       <svg
-        id="downButton"
+        className="downButton"
         width="90%"
         height="90%"
         version="1.1"
@@ -162,7 +162,7 @@ function SVGReturnTop(props) {
     return (
       //Return Button
       <svg 
-      className="portraitReturn"
+      id="portraitReturn"
       width="50%"
       height="80%"
       version="1.1"
@@ -181,7 +181,7 @@ function SVGReturnBottom(props) {
     return (
       //Return Button
       <svg 
-      className="landscapeReturn"
+      id="landscapeReturn"
       width="50%"
       height="80%"
       version="1.1"
