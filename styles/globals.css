@@ -95,7 +95,7 @@
 @media screen and (orientation: portrait) {
     .returnButton {
         order: -1;
-        margin: -7px -9px -50px -4px;
+        margin: -5% -5% -12% -3%;
     }
 }
 
@@ -103,7 +103,11 @@
     .returnButton {
         order: 2;
         align-self: flex-end;
-        margin: -5% -5% -12% -3%;
+        margin-left: 5%;
+        margin-right: 2.5%;
+        margin-top: 2.5%;
+        margin-bottom: 2.5%;
+        margin: auto;
     }
 }
 
