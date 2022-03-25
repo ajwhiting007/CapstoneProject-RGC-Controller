@@ -104,6 +104,19 @@
     }
 }
 
+@media screen and (orientation: landscape) {
+    #portraitReturn {
+        display: none;
+    }
+}
+
+@media screen and (orientation: portrait) {
+    #landscapeReturn {
+        display: none;
+    }
+}
+
+
 .bottomReturn {
     position: fixed;
     left: 40%;

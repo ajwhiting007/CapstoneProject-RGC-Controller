@@ -78,7 +78,7 @@ function SVGArrow(props) {
   if (props.direction == 'up') {
     return (
       <svg
-        className="upButton"
+        id="upButton"
         width="90%"
         height="90%"
         version="1.1"
@@ -105,7 +105,7 @@ function SVGArrow(props) {
   if (props.direction == 'down') {
     return (
       <svg
-        className="downButton"
+        id="downButton"
         width="90%"
         height="90%"
         version="1.1"
@@ -159,11 +159,10 @@ function SVGPause(props) {
   
 
 function SVGReturnTop(props) {
-  if(window.innerHeight > window.innerWidth)
-  {
     return (
       //Return Button
       <svg 
+      className="portraitReturn"
       width="50%"
       height="80%"
       version="1.1"
@@ -176,34 +175,13 @@ function SVGReturnTop(props) {
   </g>
   </svg>
     )
-  }
-  else if(window.innerWidth > window.innerHeight)
-  {
-    return (
-      //Return Button
-      <svg 
-      display="none"
-      width="50%"
-      height="80%"
-      version="1.1"
-      viewBox="0 0 13.299 8.7437"
-      xmlns="http://www.w3.org/2000/svg">
-  <g transform="translate(-29.099 -82.642)" stroke-width=".26458">
-    <g aria-label="Play"></g>
-    <rect x="29.099" y="82.642" width="13.299" height="8.7437" rx="3.9974" ry="4.2302" fill="#1c9dae" stroke-width=".072012"/>
-    <path d="m36.445 90.954v-1.4429h0.11765c0.15843 0 0.47592-0.05022 0.6837-0.10815 0.53653-0.14958 1.016-0.49641 1.2409-0.89759 0.25827-0.46078 0.21829-1.0087-0.1049-1.4375-0.23781-0.31554-0.5614-0.5359-1.0227-0.69646-0.37954-0.1321-0.56072-0.14947-1.5619-0.14976l-0.86745-2.53e-4 0.46225 0.34372c0.4041 0.30048 0.45871 0.34828 0.43412 0.37995-0.01547 0.01993-0.31992 0.25266-0.67654 0.51718l-0.64841 0.48095-1.6289-1.2216c-0.89588-0.67189-1.6271-1.2233-1.625-1.2254 0.0021-0.0021 0.73501-0.54771 1.6287-1.2125l1.6248-1.2087 1.3605 1.011-0.93148 0.69264 0.8027 1.6e-5c0.90807 1.9e-5 1.2537 0.01846 1.6445 0.08774 0.77277 0.13701 1.4069 0.39602 1.9654 0.80271 1.6557 1.2058 1.6674 3.1597 0.02621 4.3786-0.65204 0.48429-1.465 0.78395-2.3801 0.87728l-0.54394 0.02907z" stroke-width=".0059062"/>
-  </g>
-  </svg>
-    )
-  }
 }
 
 function SVGReturnBottom(props) {
-  if(window.innerHeight > window.innerWidth)
-  {
     return (
       //Return Button
       <svg 
+      className="landscapeReturn"
       width="50%"
       height="80%"
       version="1.1"
@@ -216,23 +194,4 @@ function SVGReturnBottom(props) {
   </g>
   </svg>
     )
-  }
-  else if(window.innerWidth > window.innerHeight)
-  {
-    return (
-      //Return Button
-      <svg 
-      width="50%"
-      height="80%"
-      version="1.1"
-      viewBox="0 0 13.299 8.7437"
-      xmlns="http://www.w3.org/2000/svg">
-  <g transform="translate(-29.099 -82.642)" stroke-width=".26458">
-    <g aria-label="Play"></g>
-    <rect x="29.099" y="82.642" width="13.299" height="8.7437" rx="3.9974" ry="4.2302" fill="#1c9dae" stroke-width=".072012"/>
-    <path d="m36.445 90.954v-1.4429h0.11765c0.15843 0 0.47592-0.05022 0.6837-0.10815 0.53653-0.14958 1.016-0.49641 1.2409-0.89759 0.25827-0.46078 0.21829-1.0087-0.1049-1.4375-0.23781-0.31554-0.5614-0.5359-1.0227-0.69646-0.37954-0.1321-0.56072-0.14947-1.5619-0.14976l-0.86745-2.53e-4 0.46225 0.34372c0.4041 0.30048 0.45871 0.34828 0.43412 0.37995-0.01547 0.01993-0.31992 0.25266-0.67654 0.51718l-0.64841 0.48095-1.6289-1.2216c-0.89588-0.67189-1.6271-1.2233-1.625-1.2254 0.0021-0.0021 0.73501-0.54771 1.6287-1.2125l1.6248-1.2087 1.3605 1.011-0.93148 0.69264 0.8027 1.6e-5c0.90807 1.9e-5 1.2537 0.01846 1.6445 0.08774 0.77277 0.13701 1.4069 0.39602 1.9654 0.80271 1.6557 1.2058 1.6674 3.1597 0.02621 4.3786-0.65204 0.48429-1.465 0.78395-2.3801 0.87728l-0.54394 0.02907z" stroke-width=".0059062"/>
-  </g>
-  </svg>
-    )
-  }
 }
