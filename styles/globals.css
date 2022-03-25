@@ -85,9 +85,10 @@
 
 @media screen and (orientation: landscape) {
     .pauseButton {
-        position: relative;
-        width: 100%;
-        top: -130px;
+        position: fixed;
+        width: 20%;
+        height: auto;
+        top: 10%;
     }
 }
 
@@ -119,8 +120,8 @@
 @media screen and (orientation: portrait) {
     #portraitReturn {
         position: relative;
-        top: -16px;
-        right: -251px;
+        top: -10%;
+        right: -130%;
         height: 130px;
     }
 }
@@ -135,8 +136,7 @@
 .bottomReturn {
     position: fixed;
     left: 40%;
-    bottom: 20px;
-    width: 50%;
+    width: 30%;
     margin:  0 auto;
 }
 
