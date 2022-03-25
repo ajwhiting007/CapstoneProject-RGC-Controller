@@ -103,11 +103,7 @@
     .returnButton {
         order: 2;
         align-self: flex-end;
-        margin-left: 5%;
-        margin-right: 2.5%;
-        margin-top: 2.5%;
-        margin-bottom: 2.5%;
-        margin: auto;
+        margin: -5% -5% -12% -3%;
     }
 }
 
