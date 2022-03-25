@@ -113,6 +113,11 @@
 @media screen and (orientation: landscape) {
     #portraitReturn {
         display: none;
+    }
+}
+
+@media screen and (orientation: portrait) {
+    #portraitReturn {
         position: relative;
         top: -16px;
         right: -251px;
