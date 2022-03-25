@@ -16,6 +16,7 @@
 
 @media screen and (orientation: landscape) {
     .container {
+        position: relative;
         margin: auto;
         display: flex;
         flex-direction: row;
@@ -74,8 +75,6 @@
     align-self:center;
 }
 
-
-
 @media screen and (orientation: portrait) {
     .pauseButton{
         order: 2;
@@ -87,25 +86,15 @@
 @media screen and (orientation: landscape) {
     .pauseButton {
         position: relative;
-        margin: 0 auto;
-        clear: left;
-        height: auto;
-        z-index: 0;
-        order: 2;
-        align-items: center;
-        align-self:center;
+        width: 100%;
+        top: -130px;
     }
 }
 
 @media screen and (orientation: portrait) {
     .returnButton {
         order: -1;
-        margin-left: 7.5%;
-        margin-right: 7.5%;
-        margin-top: 2.5%;
-        margin-bottom: 2.5%;
-        margin: auto;
-        width: 70%;
+        margin: -7px -9px -50px -4px;
     }
 }
 
@@ -124,6 +113,10 @@
 @media screen and (orientation: landscape) {
     #portraitReturn {
         display: none;
+        position: relative;
+        top: -16px;
+        right: -251px;
+        height: 130px;
     }
 }
 
