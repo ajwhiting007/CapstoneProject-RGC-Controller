@@ -58,7 +58,11 @@ export default function Controller() {
         <button onClick={() => triggerEvent('0')}>
           <SVGPause />
         </button>
-        <div className="bottomReturn"><SVGReturnBottom/></div>
+        <div className="bottomReturn">
+          <button onClick={() => triggerEvent('X')}>
+            <SVGReturnBottom/>
+          </button>
+        </div>
       </div>
       <div className="spacing">
         <button className="unselectable" onClick={() => triggerEvent('-1')}>
