@@ -42,16 +42,6 @@ export default function Controller() {
   /************Functions*************/
   const triggerEvent = (move) => {
     channelTest.trigger('client-controllermovement', move)
-    if(move == '0' && isPaused == false)
-    {
-      //If pause button is pushed and the game isn't currently paused
-      isPaused = true;
-    }
-    else if(move == '1' || move == '-1' && isPaused == true)
-    {
-      //If we press either up/down button while the game is paused
-      isPaused = false;
-    }
   }
 
 
@@ -64,13 +54,13 @@ export default function Controller() {
         </button>
       </div>
       <div className="spacing">
-        <button className="unselectable" onClick={() => triggerEvent('1')}>
+        <button className="unselectable" onClick={() => { triggerEvent('1'); isPaused = false;}}>
           <SVGArrow direction="up" />
           Send Up
         </button>
       </div>
       <div className="pauseSpacing">
-        <button onClick={() => triggerEvent('0')}>
+        <button onClick={() =>  { triggerEvent('0'); isPaused = true;}}>
           <SVGPause paused={isPaused}/>
           {isPaused}
         </button>
@@ -81,7 +71,7 @@ export default function Controller() {
         </div>
       </div>
       <div className="spacing">
-        <button className="unselectable" onClick={() => triggerEvent('-1')}>
+        <button className="unselectable" onClick={() => { triggerEvent('-1'); isPaused = false;}}>
           <SVGArrow direction="down" />
           Send Down
         </button>
