@@ -47,7 +47,7 @@
 }
 
 @media screen and (orientation: portrait) {
-    .playSpacing {
+    .pauseSpacing {
         margin-left: 7.5%;
         margin-right: 7.5%;
         margin-top: 2.5%;
@@ -56,7 +56,7 @@
 }
 
 @media screen and (orientation: landscape) {
-    .playSpacing {
+    .pauseSpacing {
         margin: auto;
         width: 80%;
     }
