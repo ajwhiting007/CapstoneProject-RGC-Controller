@@ -41,6 +41,7 @@ export default function Controller() {
 
   /************Functions*************/
   const triggerEvent = (move) => {
+    channelTest.trigger('client-controllermovement', move)
     if(move == '0' && isPaused == false)
     {
       //If pause button is pushed and the game isn't currently paused
@@ -51,7 +52,6 @@ export default function Controller() {
       //If we press either up/down button while the game is paused
       isPaused = false;
     }
-    channelTest.trigger('client-controllermovement', move)
     console.log("isPaused is: " , isPaused.toString())
   }
 
