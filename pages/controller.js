@@ -12,6 +12,10 @@ export default function Controller() {
   let channel
   const [channelTest, setChannelTest] = useState(null)
 
+  /***********Button Variables***********/
+  let isPaused = false;
+
+
   /**********On Screen Load Functions************/
   useEffect(() => {
     onScreenLoad()
@@ -37,7 +41,6 @@ export default function Controller() {
 
   /************Functions*************/
   const triggerEvent = (move) => {
-    channelTest.trigger('client-controllermovement', move)
     if(move == '0' && isPaused == false)
     {
       //If pause button is pushed and the game isn't currently paused
@@ -48,9 +51,10 @@ export default function Controller() {
       //If we press either up/down button while the game is paused
       isPaused = false;
     }
+    channelTest.trigger('client-controllermovement', move)
+    console.log("isPaused is: " , isPaused.toString())
   }
 
-  let isPaused = false;
 
   /**********Display************/
   return (
