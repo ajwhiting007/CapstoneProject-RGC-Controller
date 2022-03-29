@@ -62,7 +62,6 @@ export default function Controller() {
       <div className="pauseSpacing">
         <button onClick={() =>  { triggerEvent('0'); isPaused = true;}}>
           <SVGPause paused={isPaused}/>
-          {isPaused}
         </button>
         <div className="bottomReturn">
           <button onClick={() => triggerEvent('X')}>
