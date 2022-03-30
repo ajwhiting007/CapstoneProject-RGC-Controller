@@ -13,7 +13,11 @@ export default function Controller() {
   const [channelTest, setChannelTest] = useState(null)
 
   /***********Button Variables***********/
-  let isPaused = false;
+  const [isPaused, setPausedState] = useState(isPaused);
+
+    useEffect(() => {
+      setPausedState(isPaused);
+    }, [isPaused])
 
 
   /**********On Screen Load Functions************/
@@ -54,13 +58,13 @@ export default function Controller() {
         </button>
       </div>
       <div className="spacing">
-        <button className="unselectable" onClick={() => { triggerEvent('1'); isPaused = false;}}>
+        <button className="unselectable" onClick={() => { triggerEvent('1'); setPausedState(false);}}>
           <SVGArrow direction="up" />
           Send Up
         </button>
       </div>
       <div className="pauseSpacing">
-        <button onClick={() =>  { triggerEvent('0'); isPaused = true;}}>
+        <button onClick={() =>  { triggerEvent('0'); setPausedState(true);}}>
           <SVGPause paused={isPaused}/>
         </button>
         <div className="bottomReturn">
@@ -70,7 +74,7 @@ export default function Controller() {
         </div>
       </div>
       <div className="spacing">
-        <button className="unselectable" onClick={() => { triggerEvent('-1'); isPaused = false;}}>
+        <button className="unselectable" onClick={() => { triggerEvent('-1'); setPausedState(false);}}>
           <SVGArrow direction="down" />
           Send Down
         </button>
