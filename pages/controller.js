@@ -15,10 +15,9 @@ export default function Controller() {
   /***********Button Variables***********/
   const [isPaused, setPausedState] = useState(isPaused);
 
-    useEffect(() => {
-      setPausedState(isPaused);
-    }, [isPaused])
-
+  const updatePauseStatus = (event) => {
+    setPausedState(event.target.value);
+  }
 
   /**********On Screen Load Functions************/
   useEffect(() => {
@@ -65,7 +64,7 @@ export default function Controller() {
       </div>
       <div className="pauseSpacing">
         <button onClick={() =>  { triggerEvent('0'); setPausedState(true);}}>
-          <SVGPause paused={isPaused}/>
+          <SVGPause paused={isPaused} onChange={updatePauseStatus}/>
         </button>
         <div className="bottomReturn">
           <button onClick={() => triggerEvent('X')}>
