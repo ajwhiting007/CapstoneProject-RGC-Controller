@@ -13,7 +13,7 @@ export default function Controller() {
   const [channelTest, setChannelTest] = useState(null)
 
   /***********Button Variables***********/
-  const [isPaused = false, setPausedState] = useState(isPaused);
+  const [isPaused, setPausedState] = useState(false);
 
   const updatePauseStatus = (event) => {
     setPausedState(event.target.value);
@@ -189,7 +189,8 @@ function SVGPause(props) {
           </g>
         </g>
       </svg>
-    )}
+    )
+  }
 }
   
 
