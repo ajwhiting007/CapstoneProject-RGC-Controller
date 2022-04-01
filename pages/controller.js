@@ -32,11 +32,14 @@ export default function Controller() {
 
   /************Functions*************/
   const triggerEvent = (move) => {
-    if (move == 'X') {
-      channel.trigger('client-disconnect', 'Disconnect')
-      disconnect()
+    if (channel == undefined) {
     } else {
-      let messageSent = channel.trigger('client-controllermovement', move)
+      if (move == 'X') {
+        channel.trigger('client-disconnect', 'Disconnect')
+        disconnect()
+      } else {
+        let messageSent = channel.trigger('client-controllermovement', move)
+      }
     }
   }
 
