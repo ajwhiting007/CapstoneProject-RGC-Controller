@@ -17,19 +17,25 @@ function Home() {
   }
 
   async function connect() {
+    //Here we check to see if the game code is of valid length. It has to be 5 characters
     if (gameCode.length != 5) {
-      console.log('Gamecode: ', gameCode)
       alert('Please enter a valid game code.')
       return
     } else {
-      console.log('In the connect: ')
-      pusher = new Pusher(config.key, {
-        cluster: 'us2',
-        authEndpoint: 'api/pusher/auth',
-      })
-      console.log('Trying to subscribe')
+      //We first try to grab the pusher instance if it is already in memory.
+      //This way we do not get extra connections.
+      pusher = Pusher.instances[0]
+
+      //If the pusher instance doesn't exist we make one.
+      if (pusher == undefined) {
+        pusher = new Pusher(config.key, {
+          cluster: 'us2',
+          authEndpoint: 'api/pusher/auth',
+        })
+      }
+
+      //Now we connect to the channel and set up the function bindings.
       channel = pusher.subscribe('private-pong' + gameCode)
-      console.log('Channel ', channel)
       channel.bind('pusher:subscription_succeeded', () => {
         let triggered = channel.trigger('client-controllerconnect', 'Connected')
         channel.bind('client-controllerconnectresponse', (message) => {
