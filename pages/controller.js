@@ -10,7 +10,15 @@ export default function Controller() {
   /**********Pusher Variables************/
   gameCode = router.query.gameCode
   let pusher = Pusher.instances[0]
+  //If the pusher instance doesn't exist we make one.
+  if (pusher == undefined) {
+    pusher = new Pusher(config.key, {
+      cluster: 'us2',
+      authEndpoint: 'api/pusher/auth',
+    })
+  }
   let channel = pusher.channels.channels['private-pong' + gameCode]
+  //If the channel instance doesn't exist we make one.
   if (channel == undefined) {
     channel = pusher.subscribe('private-pong' + gameCode)
   }
