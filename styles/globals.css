@@ -198,35 +198,41 @@
     border-color: #000000;
     border-style: dashed;
     border-width: 2px;
-    margin: -80px -35px 40px 20px;
+    margin: -20% -10% 10% 10%;
     font-size: 22px;
     font-weight: 500;
   }
 
-  .overlay div.text#pauseText {
-    background-color: darkred;
-    border-color: #000000;
-    border-style: dashed;
-    border-width: 2px;
-    margin: -45px -35px 40px 20px;
-    font-weight: 500;
+  @media screen and (orientation: portrait)
+  {
+    .overlay div.text#pauseText {
+        background-color: darkred;
+        border-color: #000000;
+        border-style: dashed;
+        border-width: 2px;
+        margin: -20% -12% 10% 5%;
+        font-weight: 500;
+    }
   }
 
-  .overlay div.text#resumeText {
-    background-color: darkred;
-    border-color: #000000;
-    border-style: dashed;
-    border-width: 2px;
-    margin: -35px -35px 40px 20px;
-    font-weight: 500;
-  }
+  @media screen and (orientation: portrait)
+    {
+        .overlay div.text#resumeText {
+            background-color: darkred;
+            border-color: #000000;
+            border-style: dashed;
+            border-width: 2px;
+            margin: -12% -12% 10% 5%;
+            font-weight: 500;
+        }
+    }
 
   .overlay div.text#returnText {
     background-color: darkred;
     border-color: #000000;
     border-style: dashed;
     border-width: 2px;
-    margin: -55px -35px 40px 20px;
+    margin: -15% -12% 10% 5%;
     font-weight: 500;
   }
   
@@ -237,7 +243,100 @@
     right: 45px;
     font-size: 60px;
   }
-  
+
+  @media screen and (orientation: landscape)
+  {
+      .overlay .upButton{
+          width: 12%;
+          height: 12%;
+          margin: -12% 0% 0% 0%;
+      }
+  }
+
+  @media screen and (orientation: landscape)
+  {
+      .overlay .downButton{
+          width: 12%;
+          height: 12%;
+          margin: -12% 0% 0% 0%;
+      }
+  }
+
+  @media screen and (orientation: landscape)
+  {
+      .overlay .scaledReturn{
+          width: 12%;
+          height: 12%;
+          margin: -8% 0% 0% 0%;
+      }
+  }
+
+  @media screen and (orientation: landscape)
+  {
+    .overlay div.text {
+        background-color: darkred;
+        border-color: #000000;
+        border-style: dashed;
+        border-width: 2px;
+        margin: -7% -10% 10% -30%;
+        font-size: 22px;
+        font-weight: 500;
+      }
+  }
+
+  @media screen and (orientation: landscape)
+    {
+        .overlay div.text#pauseText {
+            background-color: darkred;
+            border-color: #000000;
+            border-style: dashed;
+            border-width: 2px;
+            padding: 0 0 0 0;
+            margin: -16% -12% 10% -30%;
+            font-weight: 500;
+        }
+    }
+
+ @media screen and (orientation: landscape)
+    {
+        .overlay div.text#resumeText {
+            background-color: darkred;
+            border-color: #000000;
+            border-style: dashed;
+            border-width: 2px;
+            padding: 0 0 0 0;
+            margin: -11% -12% 10% -30%;
+            font-weight: 500;
+        }
+    }
+
+@media screen and (orientation: landscape)
+    {
+        .overlay div.text#returnText {
+            background-color: darkred;
+            border-color: #000000;
+            border-style: dashed;
+            border-width: 2px;
+            margin: -7% -12% 10% -30%;
+            font-weight: 500;
+        }
+    }
+
+@media screen and (orientation: landscape)
+    {
+        .pauseButtonInstructions {
+            width: 20%;
+            margin: -8% -12% 10% 0%;
+        }
+    }
+
+@media screen and (orientation: portrait)
+    {
+        .pauseButtonInstructions {
+            margin: -2% -12% 10% 0%;
+        }
+    }
+
   /* When the height of the screen is less than 450 pixels, change the font-size of the links and position the close button again, so they don't overlap */
   @media screen and (max-height: 450px) {
     .overlay div {font-size: 20px}
