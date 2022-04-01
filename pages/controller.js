@@ -11,6 +11,9 @@ export default function Controller() {
   gameCode = router.query.gameCode
   let pusher = Pusher.instances[0]
   let channel = pusher.channels.channels['private-pong' + gameCode]
+  if (channel == undefined) {
+    channel = pusher.subscribe('private-pong' + gameCode)
+  }
   channel.bind('client-disconnect', () => disconnect())
 
   /***********Pause Button Variables***********/
@@ -32,14 +35,11 @@ export default function Controller() {
 
   /************Functions*************/
   const triggerEvent = (move) => {
-    if (channel == undefined) {
+    if (move == 'X') {
+      channel.trigger('client-disconnect', 'Disconnect')
+      disconnect()
     } else {
-      if (move == 'X') {
-        channel.trigger('client-disconnect', 'Disconnect')
-        disconnect()
-      } else {
-        let messageSent = channel.trigger('client-controllermovement', move)
-      }
+      let messageSent = channel.trigger('client-controllermovement', move)
     }
   }
 
