@@ -71,9 +71,9 @@ export default function Controller() {
         </div>
 
         <div className="overlay-content">
-          <SVGArrow direction="up" scale="25%" />
+          <SVGArrow class="upButton" scale="25%" />
           <div className="text">Moves paddle up</div>
-          <SVGArrow direction="down" scale="25%" />
+          <SVGArrow class="downButton" scale="25%" />
           <div className="text">Moves paddle down</div>
           <SVGPause
             class="pauseButtonInstructions"
