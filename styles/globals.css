@@ -2,6 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
+/*
+This is the main div container for the controller screen
+Orientation: portrait mode
+
+Purpose: Flexbox Direction, Flexbox Alignment, Flexbox Positioning, Flexbox BG Color, Flexbox Padding, Flexbox Wrap Style
+
+Display:     flex
+Direction:   column
+*/
 @media screen and (orientation: portrait) {
     .container { 
         background: rgb(173, 2, 2);
@@ -16,102 +25,236 @@
     }
 }
 
+/*
+This is the main div container for the controller screen
+Orientation: landscape mode
+
+Purpose: Flexbox Direction, Flexbox Alignment, Flexbox Positioning, Flexbox BG Color
+
+Display:     flex
+Direction:   row
+*/
 @media screen and (orientation: landscape) {
     .container {
-        background: rgb(173, 2, 2);
-        position: relative;
-        margin: auto;
-        display: flex;
+        background:   rgb(173, 2, 2);
+        position:       relative;
+        margin:         auto;
+        display:        flex;
         flex-direction: row;
-        align-items: center;
+        align-items:    center;
     }
 }
 
+/*
+This is the div container for the arrow buttons
+Orientation: portrait mode
+
+Purpose: Positioning
+
+margin:      spacing for alignment
+*/
+
 @media screen and (orientation: portrait) {
-    .spacing {
-        margin-left: 7.5%;
-        margin-right: 7.5%;
-        margin-top: 2.5%;
+    .arrowSpacing {
+        margin-left:   7.5%;
+        margin-right:  7.5%;
+        margin-top:    2.5%;
         margin-bottom: 2.5%;
     }
 }
 
+/*
+This is the div container for the arrow buttons
+Orientation:     landscape mode
+
+Purpose: Positioning and Scale
+
+margin:          spacing for alignment
+width/height:    full width/height   
+*/
 @media screen and (orientation: landscape) {
-    .spacing {
-        margin-left: 5%;
-        margin-right: 2.5%;
-        margin-top: 7.5%;
+    .arrowSpacing {
+        margin-left:   5%;
+        margin-right:  2.5%;
+        margin-top:    7.5%;
         margin-bottom: 7.5%;
-        width: 100%;
-        height: 100%;
+        width:         100%;
+        height:        100%;
     }
 }
+
+/*
+This is the div container for the pause button on the controller screen
+Orientation: portrait mode
+
+Purpose: Positioning
+
+margin:      spacing for alignment
+*/
 
 @media screen and (orientation: portrait) {
     .pauseSpacing {
-        margin-left: 7.5%;
-        margin-right: 7.5%;
-        margin-top: 2.5%;
+        margin-left:   7.5%;
+        margin-right:  7.5%;
+        margin-top:    2.5%;
         margin-bottom: 2.5%;
     }
 }
+
+/*
+This is the div container for the landscape buttons
+Orientation: landscape mode
+
+Purpose: Positioning and Scale
+
+margin:      spacing for alignment
+width:      smaller to fit screen better
+*/
 
 @media screen and (orientation: landscape) {
     .pauseSpacing {
         margin: auto;
-        width: 80%;
+        width:  80%;
     }
 }
+
+/*
+This is the svg container for the up button
+
+Purpose: Order in Flexbox, Alignment, Rotate (flip upside down), Positioning
+
+margin:          spacing for alignment
+order:           order placement within flex container
+transform:       rotating it upside down (since the original image pointed down)
+*/
 
 .upButton {
     order: 1;
     align-items: center;
-    align-self:center;
-    transform: rotateX(180deg);
-    margin-top: -15%;
+    align-self:  center;
+    transform:   rotateX(180deg);
+    margin-top:  -15%;
 }
+
+/*
+This is the svg container for the down button
+
+Purpose: Order in Flexbox, Alignment
+
+order:           order placement within flex container
+*/
 
 .downButton {
     order: 3;
     align-items: center;
-    align-self:center;
+    align-self:  center;
 }
+
+/*
+This is the svg container for the pause button on the controller screen
+Orientation: portrait mode
+
+Purpose: Order in Flexbox, Alignment
+
+order:       order placement within flex container
+*/
 
 @media screen and (orientation: portrait) {
     .pauseButton{
         order: 2;
         align-items: center;
-        align-self:center;
+        align-self:  center;
     }
 }
+
+/*
+This is the svg container for the pause button on the controller screen
+Orientation: landscape mode
+
+Purpose: Positioning and Scale
+
+width:       smaller width to fit on screen
+top:         placed a little farther from top of screen
+*/
 
 @media screen and (orientation: landscape) {
     .pauseButton {
         position: fixed;
-        width: 20%;
-        height: auto;
-        top: 10%;
+        height:   auto;
+        width:    25%;
+        top:      10%;
     }
 }
+
+/*
+This is the pause button container for the pause button on the controller screen
+Orientation: landscape mode
+
+Purpose: Positioning and Scale
+
+width:       smaller width to fit on screen
+top:         placed a little down from top of screen
+*/
+
+@media screen and (orientation: landscape)
+    {
+        #pause {
+            position: fixed;
+            width:    30%;
+            top:      10%;
+        }
+    }
+
+/*
+This is the div container for the return button on the controller screen
+Orientation: portrait mode
+
+Purpose: Order in Flexbox, Positioning
+
+order:       order placement within flex container
+margin:      spacing for alignment
+*/
 
 @media screen and (orientation: portrait) {
     .returnButton {
-        order: -1;
-        margin: -5% 10% -1% -15%;
+        order:  -1;
+        margin: -5% 10% -1% 0%;
     }
 }
 
+/*
+This is the div container for the return button on the controller screen
+Orientation: landscape mode
+
+Purpose: Order in Flexbox, Positioning, Alignment
+
+order:       order placement within flex container
+margin:      spacing for alignment
+*/
+
 @media screen and (orientation: landscape) {
     .returnButton {
-        order: 2;
-        align-self: flex-end;
-        margin-left: 5%;
-        margin-right: 2.5%;
-        margin-top: 2.5%;
+        order:         2;
+        align-self:    flex-end;
+        margin-left:   5%;
+        margin-right:  2.5%;
+        margin-top:    2.5%;
         margin-bottom: 2.5%;
-        margin: auto;
+        margin:        auto;
     }
 }
+
+/*
+This is the svg container for the return button on the controller screen
+Orientation: landscape mode
+
+Purpose: Hide itself in landscape mode 
+
+display:     hides itself in landscape mode
+             In order to display the return button in different modes (portrait/landscape/instruction overlay)
+             One hides itself in landscape mode
+             One hides itself in portrait mode
+*/
 
 @media screen and (orientation: landscape) {
     #portraitReturn {
@@ -119,14 +262,35 @@
     }
 }
 
+/*
+This is the svg container for the return button on the controller screen
+
+Purpose: Positioning and Scale
+
+Orientation:          portrait mode
+margin/right/height:  spacing for alignment
+*/
+
 @media screen and (orientation: portrait) {
     #portraitReturn {
-        position: relative;
-        top: -10%;
-        right: -130%;
-        height: 130px;
+        position:   relative;
+        margin-top: 10%;
+        right:      -130%;
+        height:     8em;
     }
 }
+
+/*
+This is the svg container for the return button on the instruction screen overlay
+Orientation: portrait mode
+
+Purpose: Hide itself in portrait mode
+
+display:     hides itself in portrait mode
+             In order to display the return button in different modes (portrait/landscape/instruction overlay)
+             One hides itself in landscape mode
+             One hides itself in portrait mode
+*/
 
 @media screen and (orientation: portrait) {
     #landscapeReturn {
@@ -134,206 +298,347 @@
     }
 }
 
+/*
+This is the div container for the return button on the controller screen in portrait mode
+Orientation: portrait mode (dealt with hiding other button as described above)
 
+Purpose: Positioning and Scale
+
+margin/left:      spacing for alignment
+width:            smaller to fit screen
+*/
 .bottomReturn {
     position: fixed;
-    left: 40%;
-    width: 30%;
-    margin:  0 auto;
+    left:     40%;
+    width:    30%;
+    margin:   0 auto;
 }
 
+/*
+This is the button container for the arrow buttons on the controller screen
+
+Purpose: Font-Size, Font-Color, Non-selectable Text (in most browsers, if not all)
+
+font-size/weight:    all the bigger to be more noticeable
+color:               white to show against the red background
+user-select:         set to none so the text within the button can't be selected and accidentally have the player zoom in/out when trying to press the button
+*/
 .unselectable {
-    font-size: large;
-    font-weight: 485;
-    color: rgb(255,255,255);
+    font-size:           large;
+    font-weight:         485;
+    color:             rgb(255,255,255);
     -webkit-user-select: none; /* Safari */
-    -ms-user-select: none; /* IE 10 and IE 11 */
-    user-select: none; /* Standard syntax */
+    -ms-user-select:     none; /* IE 10 and IE 11 */
+    user-select:         none; /* Standard syntax */
 }
 
-/* The Overlay (background) */
+/* Overlay Code/comments provided by W3schools: https://www.w3schools.com/howto/howto_js_fullscreen_overlay.asp
+   Modified by: Travis Wisecup for placement/colors/design
+
+   The Overlay (background) */
 .overlay {
     /* Height & width depends on how you want to reveal the overlay (see JS below) */   
-    height: 100%;
-    width: 100%;
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    left: 0;
-    top: 0;
-    background-color: rgb(173, 2, 2); /* Black fallback color */
-    background-color: rgba(184, 0, 0, 0.9); /* Black w/opacity */
-    overflow-x: hidden; /* Disable horizontal scroll */
-    transition: 0.5s; /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
+    height:             100%;
+    width:              100%;
+    position:           fixed; /* Stay in place */
+    z-index:            1; /* Sit on top */
+    left:               0;
+    top:                0;
+    background-color: rgb(173, 2, 2); /* red fallback color */
+    background-color: rgba(184, 0, 0, 0.9); /* red w/opacity */
+    overflow-x:         hidden; /* Disable horizontal scroll */
+    transition:         0.5s; /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
   }
 
   .overlayClosed {
     /* Height & width depends on how you want to reveal the overlay (see JS below) */   
-    height: 100%;
-    width: 0%;
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    left: 0;
-    top: 0;
+    height:             100%;
+    width:              0%;
+    position:           fixed; /* Stay in place */
+    z-index:            1; /* Sit on top */
+    left:               0;
+    top:                0;
     background-color: rgb(0,0,0); /* Black fallback color */
     background-color: rgba(0,0,0, 0.9); /* Black w/opacity */
-    overflow-x: hidden; /* Disable horizontal scroll */
-    transition: 0.5s; /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
+    overflow-x:         hidden; /* Disable horizontal scroll */
+    transition:         0.5s; /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
   }
   
   /* Position the content inside the overlay */
   .overlay-content {
-    position: relative;
-    top: 25%; /* 25% from the top */
-    width: 100%; /* 100% width */
+    position:   relative;
+    top:        25%; /* 25% from the top */
+    width:      100%; /* 100% width */
     text-align: center; /* Centered text/links */
     margin-top: 30px; /* 30px top margin to avoid conflict with the close button on smaller screens */
   }
   
   /* The navigation links inside the overlay */
   .overlay div {
-    padding: 8px;
+    padding:         8px;
     text-decoration: none;
-    color: #000000;
-    display: block; /* Display block instead of inline */
-    transition: 0.3s; /* Transition effects on hover (color) */
+    color:         #000000;
+    display:         block; /* Display block instead of inline */
+    transition:      0.3s; /* Transition effects on hover (color) */
   }
   
+ /* 
+    This is the div container's text class for the instruction overlay
+
+    Purpose: Border-Design, Scale and Positioning
+
+    Background-color:     red to match UNO's color scheme
+    border-color/style:   dashed/black to make it easier to pick out
+    font-size/weight:     (hopefully) large enough to read without needing to zoom in for most people
+ */
+
   .overlay div.text {
     background-color: darkred;
-    border-color: #000000;
-    border-style: dashed;
-    border-width: 2px;
-    margin: -20% -10% 10% 10%;
-    font-size: 22px;
-    font-weight: 500;
+    border-color:     #000000;
+    border-style:       dashed;
+    border-width:       2px;
+    margin:             -20% -10% 10% 10%;
+    font-size:          22px;
+    font-weight:        500;
   }
+
+ /* 
+    This is the div container's text class for the instruction overlay
+    specifically for the pause text in portrait mode
+
+    Purpose: Border-Design, Scale and Positioning
+
+    Background-color:     red to match UNO's color scheme
+    border-color/style:   dashed/black to make it easier to pick out
+    font-size/weight:     (hopefully) large enough to read without needing to zoom in for most people
+ */
 
   @media screen and (orientation: portrait)
   {
     .overlay div.text#pauseText {
         background-color: darkred;
-        border-color: #000000;
-        border-style: dashed;
-        border-width: 2px;
-        margin: -20% -12% 10% 5%;
-        font-weight: 500;
+        border-color:     #000000;
+        border-style:       dashed;
+        border-width:       2px;
+        margin:             -20% -12% 10% 5%;
+        font-weight:        500;
     }
   }
+
+ /* 
+    This is the div container's text class for the instruction overlay
+    specifically for the resume text (resume play by pressing arrow buttons) in portrait mode
+
+    Purpose: Border-Design, Scale and Positioning
+
+    Background-color:     red to match UNO's color scheme
+    border-color/style:   dashed/black to make it easier to pick out
+    font-size/weight:     (hopefully) large enough to read without needing to zoom in for most people
+ */
 
   @media screen and (orientation: portrait)
     {
         .overlay div.text#resumeText {
             background-color: darkred;
-            border-color: #000000;
-            border-style: dashed;
-            border-width: 2px;
-            margin: -12% -12% 10% 5%;
-            font-weight: 500;
+            border-color:     #000000;
+            border-style:      dashed;
+            border-width:      2px;
+            margin:            -12% -12% 10% 5%;
+            font-weight:       500;
         }
     }
 
+ /* 
+    This is the div container's text class for the instruction overlay
+    specifically for the return button's text
+
+    Purpose: Border-Design, Scale and Positioning
+
+    Background-color:     red to match UNO's color scheme
+    border-color/style:   dashed/black to make it easier to pick out
+    font-size/weight:     (hopefully) large enough to read without needing to zoom in for most people
+ */
+
   .overlay div.text#returnText {
     background-color: darkred;
-    border-color: #000000;
-    border-style: dashed;
-    border-width: 2px;
-    margin: -15% -12% 10% 5%;
-    font-weight: 500;
+    border-color:     #000000;
+    border-style:       dashed;
+    border-width:       2px;
+    margin:             -15% -12% 10% 5%;
+    font-weight:        500;
   }
   
   /* Position the close button (top right corner) */
   .overlay .closebtn {
-    position: absolute;
-    top: 20px;
-    right: 45px;
+    position:  absolute;
+    top:       20px;
+    right:     45px;
     font-size: 60px;
   }
+
+ /* 
+    This is the upButton class while structured within a div with the overlay class for the instruction overlay
+    specifically for the up button's size/positioning
+
+    Purpose: Scale and Positioning
+ */
 
   @media screen and (orientation: landscape)
   {
       .overlay .upButton{
-          width: 12%;
-          height: 12%;
+          width:   12%;
+          height:  12%;
           margin: -12% 0% 0% 0%;
       }
   }
+
+ /* 
+    This is the downButton class while structured within a div with the overlay class for the instruction overlay
+    specifically for the down button's size/positioning
+
+    Purpose: Scale and Positioning
+ */
 
   @media screen and (orientation: landscape)
   {
       .overlay .downButton{
-          width: 12%;
-          height: 12%;
+          width:   12%;
+          height:  12%;
           margin: -12% 0% 0% 0%;
       }
   }
 
+   /* 
+    This is the landscapeReturn class while structured within a div with the overlay class for the instruction overlay
+    specifically for the return button within landscape mode for it's size/positioning
+
+    Purpose: Scale and Positioning
+   */
+
   @media screen and (orientation: landscape)
   {
-      .overlay .scaledReturn{
-          width: 12%;
-          height: 12%;
+      .overlay .landscapeReturn{
+          width:   12%;
+          height:  12%;
           margin: -8% 0% 0% 0%;
       }
   }
+
+   /* 
+    This is the div container's text class for the instruction overlay specifically within landscape mode
+
+    Purpose: Border-Design, Positioning, and Scale
+
+    Background-color:     red to match UNO's color scheme
+    border-color/style:   dashed/black to make it easier to pick out
+    font-size/weight:     (hopefully) large enough to read without needing to zoom in for most people
+ */
 
   @media screen and (orientation: landscape)
   {
     .overlay div.text {
         background-color: darkred;
-        border-color: #000000;
-        border-style: dashed;
-        border-width: 2px;
-        margin: -7% -10% 10% -30%;
-        font-size: 22px;
-        font-weight: 500;
+        border-color:     #000000;
+        border-style:       dashed;
+        border-width:       2px;
+        margin:             -7% -10% 10% -30%;
+        font-size:          22px;
+        font-weight:        500;
       }
   }
+
+   /* 
+    This is the div container's text class for the instruction overlay
+    specifically for the pause text in landscape mode
+
+    Purpose: Border-Design, Positioning, and Scale
+
+    Background-color:     red to match UNO's color scheme
+    border-color/style:   dashed/black to make it easier to pick out
+    font-size/weight:     (hopefully) large enough to read without needing to zoom in for most people
+ */
 
   @media screen and (orientation: landscape)
     {
         .overlay div.text#pauseText {
             background-color: darkred;
-            border-color: #000000;
-            border-style: dashed;
-            border-width: 2px;
-            padding: 0 0 0 0;
-            margin: -16% -12% 10% -30%;
-            font-weight: 500;
+            border-color:     #000000;
+            border-style:       dashed;
+            border-width:       2px;
+            padding:            0 0 0 0;
+            margin:             -16% -12% 10% -30%;
+            font-weight:        500;
         }
     }
+
+ /* 
+    This is the div container's text class for the instruction overlay
+    specifically for the resume text (resume play by pressing arrow buttons) in landscape mode
+
+    Purpose: Border-Design, Positioning, and Scale
+
+    Background-color:     red to match UNO's color scheme
+    border-color/style:   dashed/black to make it easier to pick out
+    font-size/weight:     (hopefully) large enough to read without needing to zoom in for most people
+ */
 
  @media screen and (orientation: landscape)
     {
         .overlay div.text#resumeText {
             background-color: darkred;
-            border-color: #000000;
-            border-style: dashed;
-            border-width: 2px;
-            padding: 0 0 0 0;
-            margin: -11% -12% 10% -30%;
-            font-weight: 500;
+            border-color:     #000000;
+            border-style:       dashed;
+            border-width:       2px;
+            padding:            0 0 0 0;
+            margin:             -11% -12% 10% -30%;
+            font-weight:        500;
         }
     }
+
+     /* 
+    This is the div container's text class for the instruction overlay
+    specifically for the return button's text in landscape mode
+
+    Purpose: Border-Design, Positioning, and Scale
+
+    Background-color:     red to match UNO's color scheme
+    border-color/style:   dashed/black to make it easier to pick out
+    font-size/weight:     (hopefully) large enough to read without needing to zoom in for most people
+ */
 
 @media screen and (orientation: landscape)
     {
         .overlay div.text#returnText {
             background-color: darkred;
-            border-color: #000000;
-            border-style: dashed;
-            border-width: 2px;
-            margin: -7% -12% 10% -30%;
-            font-weight: 500;
+            border-color:     #000000;
+            border-style:       dashed;
+            border-width:       2px;
+            margin:             -7% -12% 10% -30%;
+            font-weight:        500;
         }
     }
+
+ /* 
+    This is the svg container's pause button class for the instruction overlay
+    specifically for landscape mode
+
+    Purpose: positioning/scale
+ */
 
 @media screen and (orientation: landscape)
     {
         .pauseButtonInstructions {
-            width: 20%;
             margin: -8% -12% 10% 0%;
+            width:  20%;
         }
     }
+
+ /* 
+    This is the svg container's pause button class for the instruction overlay
+    specifically for portrait mode
+
+    Purpose: positioning
+ */
 
 @media screen and (orientation: portrait)
     {
@@ -347,8 +652,8 @@
     .overlay div {font-size: 20px}
     .overlay .closebtn {
       font-size: 40px;
-      top: 15px;
-      right: 35px;
+      top:       15px;
+      right:     35px;
     }
   }
 
