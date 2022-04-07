@@ -51,7 +51,7 @@ function Home() {
 
   /**************DISPLAY***********/
   return (
-    <div className="background-white flex min-h-screen flex-row items-center justify-center bg-blue-500">
+    <div className="flex min-h-screen flex-col items-center justify-center bg-red-700 py-2">
       <div className="rounded-md bg-white py-6 px-6">
         <input
           type="text"
@@ -62,7 +62,7 @@ function Home() {
           className="rounded-md border-2 border-gray-500 py-2 text-center font-bold uppercase"
         />
         <button
-          className="ml-3 rounded-md bg-blue-500 py-2 px-2 font-bold text-white"
+          className="ml-3 rounded-md bg-red-700 py-2 px-2 font-bold text-white"
           onClick={() => connect()}
         >
           Connect
