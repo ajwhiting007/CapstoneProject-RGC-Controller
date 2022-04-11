@@ -3,19 +3,34 @@ import { useRouter } from 'next/router'
 import Pusher from 'pusher-js'
 import config from '../config.json'
 
+/**
+ * Description: The main page for the controller project.
+ * Authors: Travis Wisecup, Jean Paulsen, AJ Whiting
+ * Note: Use with Remote Game Control Game project
+ */
+
 function Home() {
   const [gameCode, setGameCode] = useState('')
   const router = useRouter()
 
   /************Pusher Variables*************/
-  let channel
-  let pusher
+
+  let channel // the pusher channel
+  let pusher // the pusher instance
 
   /***********FUNCTIONS**********/
+
+  /**
+   * Description: This function redirects the current page to the controller page
+   */
   const redirect = () => {
     router.push({ pathname: '/controller', query: { gameCode: gameCode } })
   }
 
+  /**
+   * Description: This async function connects to the pusher instance as well
+   * as the correct game channel
+   */
   async function connect() {
     //Here we check to see if the game code is of valid length. It has to be 5 characters
     if (gameCode.length != 5) {
@@ -50,6 +65,9 @@ function Home() {
   }
 
   /**************DISPLAY***********/
+  /**
+   * Description: The return function for what to render on the screen
+   */
   return (
     <div className="z-0 flex min-h-screen flex-col items-center justify-center bg-red-700 py-2">
       <div className="rounded-md bg-white py-6 px-6">

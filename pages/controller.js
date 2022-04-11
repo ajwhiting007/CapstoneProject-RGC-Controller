@@ -3,13 +3,28 @@ import { useRouter } from 'next/router'
 import Pusher from 'pusher-js'
 import config from '../config.json'
 
+/**
+ * Description: The controller page for the controller project.
+ * Authors: Travis Wisecup, Jean Paulsen, AJ Whiting
+ * Note: Use with Remote Game Control Game project
+ */
 export default function Controller() {
   /**********Router Variables************/
-  let gameCode
-  const router = useRouter()
+  let gameCode //the game code that is passed by the router
+  const router = useRouter() //router instance
+
   /**********Pusher Variables************/
+  //setting the game code
   gameCode = router.query.gameCode
+
+  //if the game code doesn't exist, we redirect back
+  if (gameCode == undefined) {
+    router.push('./')
+  }
+
+  //trying to set the pusher instance
   let pusher = Pusher.instances[0]
+
   //If the pusher instance doesn't exist we make one.
   if (pusher == undefined) {
     pusher = new Pusher(config.key, {
@@ -17,7 +32,10 @@ export default function Controller() {
       authEndpoint: 'api/pusher/auth',
     })
   }
+
+  //Trying to set the channel
   let channel = pusher.channels.channels['private-pong' + gameCode]
+
   //If the channel instance doesn't exist we make one.
   if (channel == undefined) {
     channel = pusher.subscribe('private-pong' + gameCode)
@@ -27,6 +45,11 @@ export default function Controller() {
   /***********Pause Button Variables***********/
   const [isPaused, setPausedState] = useState(false)
 
+  /**
+   * Description: This function sets the paused status for the controller/pause button.
+   * If the game is already paused, the paused button is gray, otherwise it has color.
+   * @param event : the event that changes the paused value
+   */
   const updatePauseStatus = (event) => {
     setPausedState(event.target.value)
   }
@@ -34,6 +57,10 @@ export default function Controller() {
   /***********Overlay Variables***********/
   const [overlayClass, setOverlayClass] = useState('overlay')
 
+  /**
+   * Description: This function updates whether or not the overlay is open or closed
+   * @param event : the event that opens or closes the overlay
+   */
   const updateOverlayClass = (event) => {
     setOverlayClass(event.target.value)
   }
@@ -42,6 +69,10 @@ export default function Controller() {
   //<a href="https://www.flaticon.com/free-icons/return" title="return icons">Return icons created by Freepik - Flaticon</a>
 
   /************Functions*************/
+  /**
+   * Description: This function sends the movement to the game project via pusher message.
+   * @param move : the event to be sent to the game as a command.
+   */
   const triggerEvent = (move) => {
     if (move == 'X') {
       channel.trigger('client-disconnect', 'Disconnect')
@@ -51,15 +82,21 @@ export default function Controller() {
     }
   }
 
-  /*To disconnect, we unsubscribe from the channel and push the index page on top. 
-  We don't need to disconnect fully from the pusher in case the user wants to connect again. 
-  This limits the amount of connections that we have */
+  /**
+   * Description: This function disconnects from the pusher channel and redirects back to the index page
+   *
+   * Idea: To disconnect, we unsubscribe from the channel and push the index page on top.
+   * We don't need to disconnect fully from the pusher in case the user wants to connect again.
+   * This limits the amount of connections that we have */
   const disconnect = () => {
     pusher.unsubscribe('private-pong' + gameCode)
     router.push('./')
   }
 
   /**********Display************/
+  /**
+   * Description: The return function for what to render on the screen
+   */
   return (
     <div className="container">
       <div id="myNav" className={overlayClass}>
@@ -88,7 +125,11 @@ export default function Controller() {
           <div className="text" id="resumeText">
             Resume with Arrow Buttons
           </div>
-          <SVGReturnTop class="landscapeReturn" scaleWidth="25%" scaleHeight="25%"/>
+          <SVGReturnTop
+            class="landscapeReturn"
+            scaleWidth="25%"
+            scaleHeight="25%"
+          />
           <div className="text" id="returnText">
             Exit to Main Screen
           </div>
@@ -97,7 +138,7 @@ export default function Controller() {
 
       <div className="returnButton">
         <button onClick={() => triggerEvent('X')}>
-          <SVGReturnTop scaleWidth="80%" scaleHeight="100%"/>
+          <SVGReturnTop scaleWidth="80%" scaleHeight="100%" />
         </button>
       </div>
       <div className="arrowSpacing">
@@ -113,13 +154,20 @@ export default function Controller() {
         </button>
       </div>
       <div className="pauseSpacing">
-        <button id="pause"
+        <button
+          id="pause"
           onClick={() => {
             triggerEvent('0')
             setPausedState(true)
           }}
         >
-          <SVGPause class="pauseButton" scaleWidth="80%" scaleHeight="100%" paused={isPaused} onChange={updatePauseStatus} />
+          <SVGPause
+            class="pauseButton"
+            scaleWidth="80%"
+            scaleHeight="100%"
+            paused={isPaused}
+            onChange={updatePauseStatus}
+          />
         </button>
         <div className="bottomReturn">
           <button onClick={() => triggerEvent('X')}>
@@ -148,38 +196,40 @@ export default function Controller() {
 //"scale"     prop which decides how much to scale the width & height.
 
 function SVGArrow(props) {
-    return (
-      <svg
-        className={props.class}
-        width={props.scale}
-        height={props.scale}
-        version="1.1"
-        viewBox="0 0 33.798 34.279"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <g transform="translate(-84.137 -120.7)">
-          <path
-            d="m117.55 138.12a16.51 16.51 0 0 1-16.51 16.51 16.51 16.51 0 0 1-16.51-16.51 16.51 16.51 0 0 1 16.51-16.51 16.51 16.51 0 0 1 16.51 16.51z"
-            fillRule="evenodd"
-            stroke="#000"
-            strokeWidth=".04827"
-          />
-          <g fill="#FFFFFF" stroke="#AD0202" strokeWidth=".6">
-            <path d="m97.664 126h6.1819v6.1819h-6.1819z" />
-            <path d="m97.664 132.19h6.1819v6.1819h-6.1819z" />
-            <path d="m97.664 138.37h6.1819v6.1819h-6.1819z" />
-            <path d="m103.85 144.64h4.8271c-2.4306 2.2633-5.1108 4.2306-7.7233 6.2752-2.7674-1.8939-5.2078-4.0741-7.7233-6.2752h4.3444z" />
-          </g>
+  return (
+    <svg
+      className={props.class}
+      width={props.scale}
+      height={props.scale}
+      version="1.1"
+      viewBox="0 0 33.798 34.279"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <g transform="translate(-84.137 -120.7)">
+        <path
+          d="m117.55 138.12a16.51 16.51 0 0 1-16.51 16.51 16.51 16.51 0 0 1-16.51-16.51 16.51 16.51 0 0 1 16.51-16.51 16.51 16.51 0 0 1 16.51 16.51z"
+          fillRule="evenodd"
+          stroke="#000"
+          strokeWidth=".04827"
+        />
+        <g fill="#FFFFFF" stroke="#AD0202" strokeWidth=".6">
+          <path d="m97.664 126h6.1819v6.1819h-6.1819z" />
+          <path d="m97.664 132.19h6.1819v6.1819h-6.1819z" />
+          <path d="m97.664 138.37h6.1819v6.1819h-6.1819z" />
+          <path d="m103.85 144.64h4.8271c-2.4306 2.2633-5.1108 4.2306-7.7233 6.2752-2.7674-1.8939-5.2078-4.0741-7.7233-6.2752h4.3444z" />
         </g>
-      </svg>
-    )
+      </g>
+    </svg>
+  )
 }
 
-//This is the Pause button component which is an SVG image.
-//"paused"      prop determines whether it returns a white or gray pause button.
-//"scaleWidth"  prop determines the svg's width
-//"scaleHeight" prop determines the svg's height
-//"class"       prop determines the svg's css class
+/**
+ * This is the Pause button component which is an SVG image.
+ * "paused"      prop determines whether it returns a white or gray pause button.
+ * "scaleWidth"  prop determines the svg's width
+ * "scaleHeight" prop determines the svg's height
+ * "class"       prop determines the svg's css class
+ * */
 
 function SVGPause(props) {
   if (props.paused == false) {
@@ -201,7 +251,12 @@ function SVGPause(props) {
             fillRule="evenodd"
           />
           <g aria-label="Play">
-            <g stroke="#000000" fill="#AD0202" strokeWidth=".170004" aria-label="Pause">
+            <g
+              stroke="#000000"
+              fill="#AD0202"
+              strokeWidth=".170004"
+              aria-label="Pause"
+            >
               <path d="m29.919 85.95q0 0.61736-0.42168 0.94809-0.42168 0.32797-1.1879 0.32797h-0.46302v1.5682h-0.50712v-4.0294h1.0666q1.5131 0 1.5131 1.1851zm-2.0726 0.8406h0.40514q0.60082 0 0.87092-0.19293 0.2701-0.19568 0.2701-0.62563 0-0.38861-0.2508-0.58153t-0.78272-0.19292h-0.51263z" />
               <path d="m32.554 88.794-0.09646-0.42995h-0.02205q-0.226 0.28388-0.452 0.38585-0.22324 0.09922-0.565 0.09922-0.44648 0-0.70004-0.23427-0.25356-0.23427-0.25356-0.66146 0-0.92053 1.4525-0.96463l0.51263-0.01929v-0.17915q0-0.34451-0.14883-0.50712-0.14883-0.16536-0.4768-0.16536-0.23978 0-0.45475 0.07166-0.21222 0.07166-0.39963 0.15985l-0.15158-0.37207q0.22875-0.12127 0.49885-0.19017 0.2701-0.0689 0.53468-0.0689 0.54846 0 0.8158 0.24253 0.26734 0.24254 0.26734 0.7717v2.0615zm-1.0225-0.34451q0.41617 0 0.65319-0.22324 0.23978-0.226 0.23978-0.63941v-0.27285l-0.44648 0.01929q-0.5209 0.01929-0.76068 0.16536-0.23702 0.14607-0.23702 0.46026 0 0.23702 0.14332 0.3638 0.14607 0.12678 0.4079 0.12678z" />
               <path d="m34.321 85.768v1.9485q0 0.36656 0.16261 0.5457 0.16536 0.17639 0.50987 0.17639 0.46578 0 0.678-0.25907 0.21222-0.25907 0.21222-0.83509v-1.5765h0.49885v3.0262h-0.4079l-0.07166-0.39963h-0.02481q-0.13505 0.21773-0.38309 0.33624t-0.57602 0.11851q-0.5457 0-0.82407-0.26183-0.27561-0.26183-0.27561-0.83785v-1.9816z" />
@@ -212,8 +267,7 @@ function SVGPause(props) {
         </g>
       </svg>
     )
-  }
-  else if (props.paused == true) {
+  } else if (props.paused == true) {
     return (
       <svg
         className={props.class}
@@ -232,7 +286,12 @@ function SVGPause(props) {
             fillRule="evenodd"
           />
           <g aria-label="Play">
-            <g stroke="#000000" fill="#AD0202" strokeWidth=".170004" aria-label="Pause">
+            <g
+              stroke="#000000"
+              fill="#AD0202"
+              strokeWidth=".170004"
+              aria-label="Pause"
+            >
               <path d="m29.919 85.95q0 0.61736-0.42168 0.94809-0.42168 0.32797-1.1879 0.32797h-0.46302v1.5682h-0.50712v-4.0294h1.0666q1.5131 0 1.5131 1.1851zm-2.0726 0.8406h0.40514q0.60082 0 0.87092-0.19293 0.2701-0.19568 0.2701-0.62563 0-0.38861-0.2508-0.58153t-0.78272-0.19292h-0.51263z" />
               <path d="m32.554 88.794-0.09646-0.42995h-0.02205q-0.226 0.28388-0.452 0.38585-0.22324 0.09922-0.565 0.09922-0.44648 0-0.70004-0.23427t-0.25356-0.66146q0-0.92053 1.4525-0.96463l0.51263-0.01929v-0.17915q0-0.34451-0.14883-0.50712-0.14883-0.16536-0.4768-0.16536-0.23978 0-0.45475 0.07166-0.21222 0.07166-0.39963 0.15985l-0.15158-0.37207q0.22875-0.12127 0.49885-0.19017t0.53468-0.0689q0.54846 0 0.8158 0.24253 0.26734 0.24254 0.26734 0.7717v2.0615zm-1.0225-0.34451q0.41617 0 0.65319-0.22324 0.23978-0.226 0.23978-0.63941v-0.27285l-0.44648 0.01929q-0.5209 0.01929-0.76068 0.16536-0.23702 0.14607-0.23702 0.46026 0 0.23702 0.14332 0.3638 0.14607 0.12678 0.4079 0.12678z" />
               <path d="m34.321 85.768v1.9485q0 0.36656 0.16261 0.5457 0.16536 0.17639 0.50987 0.17639 0.46578 0 0.678-0.25907t0.21222-0.83509v-1.5765h0.49885v3.0262h-0.4079l-0.07166-0.39963h-0.02481q-0.13505 0.21773-0.38309 0.33624t-0.57602 0.11851q-0.5457 0-0.82407-0.26183-0.27561-0.26183-0.27561-0.83785v-1.9816z" />
@@ -246,10 +305,12 @@ function SVGPause(props) {
   }
 }
 
-//This is the Return button component displayed in portrait mode on the controller, and landscape mode on the instructions which is an SVG image.
-//"scaleWidth"  prop determines the svg's width
-//"scaleHeight" prop determines the svg's height
-//"class"       prop determines the svg's css class
+/**
+ * This is the Return button component displayed in portrait mode on the controller, and landscape mode on the instructions which is an SVG image.
+ * "scaleWidth"  prop determines the svg's width
+ * "scaleHeight" prop determines the svg's height
+ * "class"       prop determines the svg's css class
+ * */
 
 function SVGReturnTop(props) {
   if (props.class && props.class) {
@@ -319,7 +380,9 @@ function SVGReturnTop(props) {
   }
 }
 
-//This is the Return button component displayed in landscape mode which is an SVG image.
+/**
+ * This is the Return button component displayed in landscape mode which is an SVG image.
+ * */
 
 function SVGReturnBottom(props) {
   return (
