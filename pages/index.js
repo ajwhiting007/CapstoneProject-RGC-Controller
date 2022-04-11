@@ -51,7 +51,7 @@ function Home() {
 
   /**************DISPLAY***********/
   return (
-    <div className="flex min-h-screen flex-col items-center justify-center bg-red-700 py-2">
+    <div className="z-0 flex min-h-screen flex-col items-center justify-center bg-red-700 py-2">
       <div className="rounded-md bg-white py-6 px-6">
         <input
           type="text"
