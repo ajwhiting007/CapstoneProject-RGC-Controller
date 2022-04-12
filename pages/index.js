@@ -5,8 +5,11 @@ import config from '../config.json'
 
 /**
  * Description: The main page for the controller project.
- * Authors: Travis Wisecup, Jean Paulsen, AJ Whiting
+ * @author Travis Wisecup
+ * @author Jean Paulsen
+ * @author AJ Whiting
  * Note: Use with Remote Game Control Game project
+ * @function Home
  */
 
 function Home() {
@@ -22,6 +25,7 @@ function Home() {
 
   /**
    * Description: This function redirects the current page to the controller page
+   * @function redirect
    */
   const redirect = () => {
     router.push({ pathname: '/controller', query: { gameCode: gameCode } })
@@ -30,6 +34,7 @@ function Home() {
   /**
    * Description: This async function connects to the pusher instance as well
    * as the correct game channel
+   * @function connect
    */
   async function connect() {
     //Here we check to see if the game code is of valid length. It has to be 5 characters
@@ -66,7 +71,7 @@ function Home() {
 
   /**************DISPLAY***********/
   /**
-   * Description: The return function for what to render on the screen
+   * The return function for what to render on the screen
    */
   return (
     <div className="z-0 flex min-h-screen flex-col items-center justify-center bg-red-700 py-2">

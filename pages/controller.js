@@ -5,8 +5,11 @@ import config from '../config.json'
 
 /**
  * Description: The controller page for the controller project.
- * Authors: Travis Wisecup, Jean Paulsen, AJ Whiting
+ * @author Travis Wisecup
+ * @author Jean Paulsen
+ * @author AJ Whiting
  * Note: Use with Remote Game Control Game project
+ * @function Controller
  */
 export default function Controller() {
   /**********Router Variables************/
@@ -49,6 +52,7 @@ export default function Controller() {
    * Description: This function sets the paused status for the controller/pause button.
    * If the game is already paused, the paused button is gray, otherwise it has color.
    * @param event : the event that changes the paused value
+   * @function updatePauseStatus
    */
   const updatePauseStatus = (event) => {
     setPausedState(event.target.value)
@@ -60,6 +64,7 @@ export default function Controller() {
   /**
    * Description: This function updates whether or not the overlay is open or closed
    * @param event : the event that opens or closes the overlay
+   * @function updateOverlayClass
    */
   const updateOverlayClass = (event) => {
     setOverlayClass(event.target.value)
@@ -72,6 +77,7 @@ export default function Controller() {
   /**
    * Description: This function sends the movement to the game project via pusher message.
    * @param move : the event to be sent to the game as a command.
+   * @function triggerEvent
    */
   const triggerEvent = (move) => {
     if (move == 'X') {
@@ -87,7 +93,8 @@ export default function Controller() {
    *
    * Idea: To disconnect, we unsubscribe from the channel and push the index page on top.
    * We don't need to disconnect fully from the pusher in case the user wants to connect again.
-   * This limits the amount of connections that we have */
+   * This limits the amount of connections that we have
+   * @function disconnect*/
   const disconnect = () => {
     pusher.unsubscribe('private-pong' + gameCode)
     router.push('./')
@@ -95,7 +102,7 @@ export default function Controller() {
 
   /**********Display************/
   /**
-   * Description: The return function for what to render on the screen
+   *  return function for what to render on the screen
    */
   return (
     <div className="container">
@@ -191,9 +198,11 @@ export default function Controller() {
   )
 }
 
-//This is the Arrow button component which is an SVG image.
-//"class"     prop decides the svg's css class, which in turn either flips it upside down or leaves it upright
-//"scale"     prop which decides how much to scale the width & height.
+/**This is the Arrow button component which is an SVG image.
+ * "class"     prop decides the svg's css class, which in turn either flips it upside down or leaves it upright
+ * "scale"     prop which decides how much to scale the width & height.
+ * @function SVGArrow
+ * */
 
 function SVGArrow(props) {
   return (
@@ -229,6 +238,7 @@ function SVGArrow(props) {
  * "scaleWidth"  prop determines the svg's width
  * "scaleHeight" prop determines the svg's height
  * "class"       prop determines the svg's css class
+ * @function SVGPause
  * */
 
 function SVGPause(props) {
@@ -310,6 +320,7 @@ function SVGPause(props) {
  * "scaleWidth"  prop determines the svg's width
  * "scaleHeight" prop determines the svg's height
  * "class"       prop determines the svg's css class
+ * @function SVGReturnTop
  * */
 
 function SVGReturnTop(props) {
@@ -382,6 +393,7 @@ function SVGReturnTop(props) {
 
 /**
  * This is the Return button component displayed in landscape mode which is an SVG image.
+ * @function SVGReturnBottom
  * */
 
 function SVGReturnBottom(props) {
