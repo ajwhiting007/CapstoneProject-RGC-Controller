@@ -144,7 +144,7 @@ export default function Controller() {
       </div>
 
       <div className="returnButton">
-        <button onClick={() => triggerEvent('X')}>
+        <button id="returnButton" onClick={() => triggerEvent('X')}>
           <SVGReturnTop scaleWidth="80%" scaleHeight="100%" />
         </button>
       </div>
@@ -177,7 +177,7 @@ export default function Controller() {
           />
         </button>
         <div className="bottomReturn">
-          <button onClick={() => triggerEvent('X')}>
+          <button id="returnButton" onClick={() => triggerEvent('X')}>
             <SVGReturnBottom />
           </button>
         </div>
