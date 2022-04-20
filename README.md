@@ -16,3 +16,7 @@ $ npm run dev
 # Features
 
 -passes messages from client to server currently. Later, this will be the game side that the user connects to with their phone and the QR code.
+
+# Release Notes
+
+MS 4: Added testing to the project as well as polished and fixed bugs (i.e. timeout bug)
