@@ -105,94 +105,96 @@ export default function Controller() {
    *  return function for what to render on the screen
    */
   return (
-    <div className="container">
-      <div id="myNav" className={overlayClass}>
-        <div
-          className="closebtn"
-          onClick={() => setOverlayClass('overlayClosed')}
-        >
-          &times;
+    <div className="z-0 flex min-h-screen flex-col items-center justify-center bg-red-700 py-2">
+      <div className="container">
+        <div id="myNav" className={overlayClass}>
+          <div
+            className="closebtn"
+            onClick={() => setOverlayClass('overlayClosed')}
+          >
+            &times;
+          </div>
+
+          <div className="overlay-content">
+            <SVGArrow class="upButton" scale="25%" />
+            <div className="text">Moves paddle up</div>
+            <SVGArrow class="downButton" scale="25%" />
+            <div className="text">Moves paddle down</div>
+            <SVGPause
+              class="pauseButtonInstructions"
+              scaleWidth="30%"
+              scaleHeight="45%"
+              paused={isPaused}
+              onChange={updatePauseStatus}
+            />
+            <div className="text" id="pauseText">
+              Pauses Game
+            </div>
+            <div className="text" id="resumeText">
+              Resume with Arrow Buttons
+            </div>
+            <SVGReturnTop
+              class="landscapeReturn"
+              scaleWidth="25%"
+              scaleHeight="25%"
+            />
+            <div className="text" id="returnText">
+              Exit to Main Screen
+            </div>
+          </div>
         </div>
 
-        <div className="overlay-content">
-          <SVGArrow class="upButton" scale="25%" />
-          <div className="text">Moves paddle up</div>
-          <SVGArrow class="downButton" scale="25%" />
-          <div className="text">Moves paddle down</div>
-          <SVGPause
-            class="pauseButtonInstructions"
-            scaleWidth="30%"
-            scaleHeight="45%"
-            paused={isPaused}
-            onChange={updatePauseStatus}
-          />
-          <div className="text" id="pauseText">
-            Pauses Game
-          </div>
-          <div className="text" id="resumeText">
-            Resume with Arrow Buttons
-          </div>
-          <SVGReturnTop
-            class="landscapeReturn"
-            scaleWidth="25%"
-            scaleHeight="25%"
-          />
-          <div className="text" id="returnText">
-            Exit to Main Screen
-          </div>
-        </div>
-      </div>
-
-      <div className="returnButton">
-        <button id="returnButton" onClick={() => triggerEvent('X')}>
-          <SVGReturnTop scaleWidth="80%" scaleHeight="100%" />
-        </button>
-      </div>
-      <div className="arrowSpacing">
-        <button
-          className="unselectable"
-          onClick={() => {
-            triggerEvent('1')
-            setPausedState(false)
-          }}
-        >
-          <SVGArrow class="upButton" scale="90%" />
-          Send Up
-        </button>
-      </div>
-      <div className="pauseSpacing">
-        <button
-          id="pause"
-          onClick={() => {
-            triggerEvent('0')
-            setPausedState(true)
-          }}
-        >
-          <SVGPause
-            class="pauseButton"
-            scaleWidth="80%"
-            scaleHeight="100%"
-            paused={isPaused}
-            onChange={updatePauseStatus}
-          />
-        </button>
-        <div className="bottomReturn">
+        <div className="returnButton">
           <button id="returnButton" onClick={() => triggerEvent('X')}>
-            <SVGReturnBottom />
+            <SVGReturnTop scaleWidth="80%" scaleHeight="100%" />
           </button>
         </div>
-      </div>
-      <div className="arrowSpacing">
-        <button
-          className="unselectable"
-          onClick={() => {
-            triggerEvent('-1')
-            setPausedState(false)
-          }}
-        >
-          <SVGArrow class="downButton" scale="90%" />
-          Send Down
-        </button>
+        <div className="arrowSpacing">
+          <button
+            className="unselectable"
+            onClick={() => {
+              triggerEvent('1')
+              setPausedState(false)
+            }}
+          >
+            <SVGArrow class="upButton" scale="90%" />
+            Send Up
+          </button>
+        </div>
+        <div className="pauseSpacing">
+          <button
+            id="pause"
+            onClick={() => {
+              triggerEvent('0')
+              setPausedState(true)
+            }}
+          >
+            <SVGPause
+              class="pauseButton"
+              scaleWidth="80%"
+              scaleHeight="100%"
+              paused={isPaused}
+              onChange={updatePauseStatus}
+            />
+          </button>
+          <div className="bottomReturn">
+            <button id="returnButton" onClick={() => triggerEvent('X')}>
+              <SVGReturnBottom />
+            </button>
+          </div>
+        </div>
+        <div className="arrowSpacing">
+          <button
+            className="unselectable"
+            onClick={() => {
+              triggerEvent('-1')
+              setPausedState(false)
+            }}
+          >
+            <SVGArrow class="downButton" scale="90%" />
+            Send Down
+          </button>
+        </div>
       </div>
     </div>
   )

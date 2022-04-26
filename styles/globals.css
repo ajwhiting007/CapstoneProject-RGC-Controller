@@ -13,7 +13,7 @@ Direction:   column
 */
 @media screen and (orientation: portrait) {
     .container { 
-        background: rgb(173, 2, 2);
+        /* background: rgb(173, 2, 2); */
         height:200%;
         width:130%;
         display: flex;
@@ -36,7 +36,7 @@ Direction:   row
 */
 @media screen and (orientation: landscape) {
     .container {
-        background:   rgb(173, 2, 2);
+        /* background:   rgb(173, 2, 2); */
         position:       relative;
         margin:         auto;
         display:        flex;

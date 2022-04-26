@@ -5,7 +5,7 @@ const { Builder, By, Key } = require('selenium-webdriver')
   let driver = await new Builder().forBrowser('chrome').build()
 
   let logintest = LoginTester(driver)
-  let gameCode = 'XV83E'
+  let gameCode = 'PV3TX'
 
   let afterLogin = async function (driver) {}
 
