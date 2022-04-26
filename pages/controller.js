@@ -13,17 +13,11 @@ import config from '../config.json'
  */
 export default function Controller() {
   /**********Router Variables************/
-  let gameCode //the game code that is passed by the router
-  const router = useRouter() //router instance
-
+  let gameCode
+  const router = useRouter()
   /**********Pusher Variables************/
   //setting the game code
   gameCode = router.query.gameCode
-
-  //if the game code doesn't exist, we redirect back
-  if (gameCode == undefined) {
-    router.push('./')
-  }
 
   //trying to set the pusher instance
   let pusher = Pusher.instances[0]
