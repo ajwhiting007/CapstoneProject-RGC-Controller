@@ -99,7 +99,7 @@ export default function Controller() {
    *  return function for what to render on the screen
    */
   return (
-    <div className="z-0 flex min-h-screen flex-col items-center justify-center bg-red-700 py-2">
+    <div className="bg-red-700">
       <div className="container">
         <div id="myNav" className={overlayClass}>
           <div
