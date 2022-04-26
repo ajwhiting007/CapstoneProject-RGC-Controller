@@ -16,6 +16,7 @@ Direction:   column
         /* background: rgb(173, 2, 2); */
         /* height:200%;
         width:130%; */
+        overflow: hidden;
         display: flex;
         flex-direction: column;
         flex-wrap: wrap;
@@ -218,7 +219,7 @@ margin:      spacing for alignment
 @media screen and (orientation: portrait) {
     .returnButton {
         order:  -1;
-        margin: -5% 10% -1% 0%;
+        margin: -5% 10% -1% -5%;
     }
 }
 
