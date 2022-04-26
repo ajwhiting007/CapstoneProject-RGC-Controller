@@ -14,8 +14,8 @@ Direction:   column
 @media screen and (orientation: portrait) {
     .container { 
         /* background: rgb(173, 2, 2); */
-        height:200%;
-        width:130%;
+        /* height:200%;
+        width:130%; */
         display: flex;
         flex-direction: column;
         flex-wrap: wrap;
