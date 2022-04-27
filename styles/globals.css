@@ -57,6 +57,8 @@ margin:      spacing for alignment
 
 @media screen and (orientation: portrait) {
     .arrowSpacing {
+        width: 60%;
+        height: 60%;
         margin-left:   7.5%;
         margin-right:  7.5%;
         margin-top:    2.5%;
@@ -95,6 +97,8 @@ margin:      spacing for alignment
 
 @media screen and (orientation: portrait) {
     .pauseSpacing {
+        height: 65%;
+        width: 65%;
         margin-left:   7.5%;
         margin-right:  7.5%;
         margin-top:    2.5%;
