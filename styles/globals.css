@@ -220,6 +220,7 @@ margin:      spacing for alignment
     .returnButton {
         order:  -1;
         margin: -5% 10% -1% -5%;
+        width: 48%;
     }
 }
 
