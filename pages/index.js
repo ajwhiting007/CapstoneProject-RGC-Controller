@@ -55,12 +55,17 @@ function Home() {
       }
 
       //Now we connect to the channel and set up the function bindings.
-      channel = pusher.subscribe('private-pong' + gameCode)
+      channel = pusher.subscribe('presence-pong' + gameCode)
       channel.bind('pusher:subscription_succeeded', () => {
         let triggered = channel.trigger('client-controllerconnect', 'Connected')
         channel.bind('client-controllerconnectresponse', (message) => {
           if (message == 'Recieved') {
             redirect()
+            channel.unbind('client-controllerconnectresponse')
+          } else if (message == 'Full') {
+            alert(
+              'This game is full. Please try again when the current player is finished.'
+            )
           } else {
             alert('An error has occurred. Please retry connection.')
           }

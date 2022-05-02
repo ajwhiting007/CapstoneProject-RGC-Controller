@@ -31,11 +31,11 @@ export default function Controller() {
   }
 
   //Trying to set the channel
-  let channel = pusher.channels.channels['private-pong' + gameCode]
+  let channel = pusher.channels.channels['presence-pong' + gameCode]
 
   //If the channel instance doesn't exist we make one.
   if (channel == undefined) {
-    channel = pusher.subscribe('private-pong' + gameCode)
+    channel = pusher.subscribe('presence-pong' + gameCode)
   }
   channel.bind('client-disconnect', () => disconnect())
 
@@ -90,7 +90,7 @@ export default function Controller() {
    * This limits the amount of connections that we have
    * @function disconnect*/
   const disconnect = () => {
-    pusher.unsubscribe('private-pong' + gameCode)
+    pusher.unsubscribe('presence-pong' + gameCode)
     router.push('./')
   }
 
